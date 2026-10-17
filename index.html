@@ -14,6 +14,7 @@
 <style>
 :root{--bg:#f3f5fa;--panel:#ffffff;--panel2:#eef2fb;--red:#e3103f;--redd:#c10a34;--yel:#ffc906;--amber:#8a6400;--navy:#0a1633;--ink:#14213d;--grey:#5b6785;--line:#d5dcec}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
 .stripe{height:14px;background:repeating-linear-gradient(115deg,var(--red) 0 14px,var(--yel) 14px 28px)}
@@ -124,6 +125,24 @@ td:last-child{color:var(--redd);font-weight:800;white-space:nowrap}
  .card,.can,.cant{padding:14px}
  nav.tabs button{padding:12px 12px}
 }
+.wxcur{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
+.wxcur .temp{font-size:3.2rem;font-weight:900;color:var(--navy);line-height:1}
+.wxcur .cond{font-weight:800;color:var(--navy);font-size:1.1rem}
+.wxcur dl{display:grid;grid-template-columns:auto auto;gap:2px 14px;margin:0;font-size:.92rem}
+.wxcur dt{color:var(--grey);font-weight:700}.wxcur dd{margin:0;font-weight:800;color:var(--navy)}
+.wxdays{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px}
+.wxday{background:#fff;border:1px solid var(--line);border-top:5px solid var(--red);border-radius:4px;padding:12px 14px}
+.wxday.race{border-top-color:var(--yel);background:#fffdf3}
+.wxday h4{margin:0 0 2px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--redd)}
+.wxday .hl{font-size:1.5rem;font-weight:900;color:var(--navy)}
+.wxday .hl small{font-size:1rem;color:var(--grey);font-weight:700}
+.wxday p{margin:2px 0;font-size:.88rem}
+.wxhours{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.wxh{flex:0 0 74px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:8px 6px;text-align:center;font-size:.8rem}
+.wxh b{display:block;font-size:1.05rem;color:var(--navy)}
+.wxh span{display:block;color:var(--grey);font-weight:700}
+.wxh.now{border-color:var(--red);border-width:2px}
+.wxerr{border-left-color:var(--red)}
 footer{margin-top:44px;padding:18px 0 28px;color:var(--grey);font-size:.8rem;border-top:2px solid var(--line)}
 footer p{margin:0 0 8px}
 @media print{nav.tabs,.chips,.count,.btn{display:none}.js [data-panel]{display:block!important}body{background:#fff}.card,.day,.can,.cant{break-inside:avoid;box-shadow:none}}
@@ -146,9 +165,9 @@ document.head.appendChild(l);}catch(e){}})();
   <div class="sub2">THE FAN&rsquo;S FIELD GUIDE TO RACE WEEKEND</div>
   <div class="band"></div>
   <div class="dates">OCT 22&ndash;25 <span>2026</span></div>
-  <div class="count" id="count" aria-live="off">Race start: <b>Sun Oct 25, 3:00 PM CT</b></div>
+  <div class="count" id="wxnow" hidden></div> <div class="count" id="count" aria-live="off">Race start: <b>Sun Oct 25, 3:00 PM CT</b></div>
 </div></header>
-<nav class="tabs" aria-label="Guide sections"><div class="wrap" role="tablist"><button role="tab" id="tab-schedule" aria-controls="p-schedule" aria-selected="true" tabindex="0" data-tab="schedule">Schedule</button><button role="tab" id="tab-music" aria-controls="p-music" aria-selected="false" tabindex="-1" data-tab="music">Music</button><button role="tab" id="tab-track" aria-controls="p-track" aria-selected="false" tabindex="-1" data-tab="track">Track</button><button role="tab" id="tab-rules" aria-controls="p-rules" aria-selected="false" tabindex="-1" data-tab="rules">Gate Rules</button><button role="tab" id="tab-travel" aria-controls="p-travel" aria-selected="false" tabindex="-1" data-tab="travel">Parking</button><button role="tab" id="tab-exit" aria-controls="p-exit" aria-selected="false" tabindex="-1" data-tab="exit">Exit &amp; Stay</button><button role="tab" id="tab-info" aria-controls="p-info" aria-selected="false" tabindex="-1" data-tab="info">Fine Print</button></div></nav>
+<nav class="tabs" aria-label="Guide sections"><div class="wrap" role="tablist"><button role="tab" id="tab-schedule" aria-controls="p-schedule" aria-selected="true" tabindex="0" data-tab="schedule">Schedule</button><button role="tab" id="tab-weather" aria-controls="p-weather" aria-selected="false" tabindex="-1" data-tab="weather">Weather</button><button role="tab" id="tab-music" aria-controls="p-music" aria-selected="false" tabindex="-1" data-tab="music">Music</button><button role="tab" id="tab-track" aria-controls="p-track" aria-selected="false" tabindex="-1" data-tab="track">Track</button><button role="tab" id="tab-rules" aria-controls="p-rules" aria-selected="false" tabindex="-1" data-tab="rules">Gate Rules</button><button role="tab" id="tab-travel" aria-controls="p-travel" aria-selected="false" tabindex="-1" data-tab="travel">Parking</button><button role="tab" id="tab-exit" aria-controls="p-exit" aria-selected="false" tabindex="-1" data-tab="exit">Exit &amp; Stay</button><button role="tab" id="tab-info" aria-controls="p-info" aria-selected="false" tabindex="-1" data-tab="info">Fine Print</button></div></nav>
 <main class="wrap">
 
 <section data-panel="schedule" id="p-schedule" role="tabpanel" aria-labelledby="tab-schedule" class="on">
@@ -221,6 +240,15 @@ document.head.appendChild(l);}catch(e){}})();
   </div>
   <div class="note"><b>How to read this:</b> pink rows are Formula 1 sessions and headline moments; gold rows are headline concerts. This is a standard weekend with <b>no sprint race</b>. Thursday (&ldquo;Grand PrixView&rdquo;) is new: $20 standalone, or included with a 3-day ticket. Only Thursday ticket holders can do the Pit Lane Walk, and all Thursday guests enter through the Grand Plaza gates.</div>
   <div class="note"><b>* Concert times:</b> COTA says Super Stage concerts start <b>60 to 90 minutes after track activity ends</b>, and concert-area gates open about 90 minutes after. Counting from the end of the F1 Academy race (6:25 PM Fri, 6:35 PM Sat) gives the windows shown. COTA hasn&rsquo;t published exact start times; check the COTA app.</div>
+</section>
+
+<section data-panel="weather" id="p-weather" role="tabpanel" aria-labelledby="tab-weather">
+  <div class="sec-h"><i></i><div><span class="kicker">Live from the circuit area</span><h2>Weather at COTA</h2></div></div>
+  <div class="rule"></div>
+  <div id="wx"><div class="note" style="margin-top:0">Loading live weather&hellip;</div></div>
+  <p class="small" id="wxmeta" style="margin-top:12px"></p>
+  <button class="btn" type="button" id="wxrefresh">Refresh now</button>
+  <p class="small" style="margin-top:10px">Data: <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> for the Circuit of the Americas location. Forecasts change. Rain or shine at COTA, but lightning can pause things. For official alerts, see <a href="https://www.weather.gov/ewx/" rel="noopener">weather.gov</a> (Austin/San Antonio).</p>
 </section>
 
 <section data-panel="music" id="p-music" role="tabpanel" aria-labelledby="tab-music">
@@ -507,6 +535,78 @@ try{var saved=JSON.parse(localStorage.getItem(KEY)||'[]');boxes.forEach(function
 function save(){try{localStorage.setItem(KEY,JSON.stringify(boxes.map(function(b){return b.checked})))}catch(e){}}
 boxes.forEach(function(b){b.addEventListener('change',save)});
 document.getElementById('resetcheck').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});save();});
+})();
+</script>
+<script>
+(function(){
+var URL_='https://api.open-meteo.com/v1/forecast?latitude=30.1328&longitude=-97.6411'
++'&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weather_code,wind_speed_10m,wind_gusts_10m'
++'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_speed_10m_max,uv_index_max,sunrise,sunset'
++'&hourly=temperature_2m,precipitation_probability,weather_code'
++'&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FChicago&forecast_days=10';
+var KEY='usgp2026-wx',RACE=['2026-10-22','2026-10-23','2026-10-24','2026-10-25'];
+var NAMES={'2026-10-22':'Thu Oct 22 \u00b7 Grand PrixView','2026-10-23':'Fri Oct 23 \u00b7 Practice','2026-10-24':'Sat Oct 24 \u00b7 Qualifying','2026-10-25':'Sun Oct 25 \u00b7 RACE DAY'};
+function cond(c){
+  if(c===0)return'Clear';if(c===1)return'Mostly clear';if(c===2)return'Partly cloudy';if(c===3)return'Overcast';
+  if(c===45||c===48)return'Fog';if(c>=51&&c<=55)return'Drizzle';if(c===56||c===57)return'Freezing drizzle';
+  if(c===61||c===80)return'Light rain';if(c===63||c===81)return'Rain';if(c===65||c===82)return'Heavy rain';
+  if(c===66||c===67)return'Freezing rain';if(c>=71&&c<=77||c===85||c===86)return'Snow';
+  if(c===95)return'Thunderstorm';if(c===96||c===99)return'Thunderstorm, hail';return'Conditions n/a';
+}
+function r(n){return n==null?'--':Math.round(n)}
+function esc(t){var d=document.createElement('div');d.textContent=String(t);return d.innerHTML}
+function hr12(iso){var h=+iso.slice(11,13);return (h%12||12)+(h<12?' AM':' PM')}
+function dlabel(iso){var d=new Date(iso+'T12:00:00Z');return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'UTC'})}
+function tm(iso){return hr12(iso).replace(':00','')+(iso.slice(14,16)!=='00'?'':'')}
+function sun(iso){var h=+iso.slice(11,13),m=iso.slice(14,16);return (h%12||12)+':'+m+(h<12?' AM':' PM')}
+function render(d,stale,ts){
+  var cur=d.current,dy=d.daily,hr=d.hourly,out='';
+  out+='<div class="card hi"><h3>Right now at the circuit</h3><div class="wxcur"><div><div class="temp">'+r(cur.temperature_2m)+'&deg;F</div><div class="cond">'+esc(cond(cur.weather_code))+'</div></div>'
+   +'<dl><dt>Feels like</dt><dd>'+r(cur.apparent_temperature)+'&deg;F</dd><dt>Wind</dt><dd>'+r(cur.wind_speed_10m)+' mph (gusts '+r(cur.wind_gusts_10m)+')</dd><dt>Humidity</dt><dd>'+r(cur.relative_humidity_2m)+'%</dd><dt>Rain now</dt><dd>'+(cur.precipitation||0)+' in</dd></dl></div></div>';
+  // hourly next 24
+  var ci=0;for(var i=0;i<hr.time.length;i++){if(hr.time[i]>=cur.time.slice(0,13)+':00'){ci=i;break}}
+  out+='<h3 class="kicker" style="margin:18px 0 8px">Next 24 hours</h3><div class="wxhours">';
+  for(var k=ci;k<Math.min(ci+24,hr.time.length);k++){
+    out+='<div class="wxh'+(k===ci?' now':'')+'"><span>'+(k===ci?'Now':hr12(hr.time[k]))+'</span><b>'+r(hr.temperature_2m[k])+'&deg;</b><span>'+r(hr.precipitation_probability[k])+'% rain</span></div>';
+  }
+  out+='</div>';
+  // race weekend days
+  out+='<h3 class="kicker" style="margin:18px 0 8px">Race weekend forecast</h3><div class="wxdays">';
+  var any=false;
+  RACE.forEach(function(day){
+    var i=dy.time.indexOf(day);
+    if(i<0){out+='<div class="wxday'+(day==='2026-10-25'?' race':'')+'"><h4>'+esc(NAMES[day])+'</h4><p class="small">Forecast not available yet. Check back closer to the weekend.</p></div>';return}
+    any=true;
+    var extra='';
+    if(day==='2026-10-25'){var j=hr.time.indexOf(day+'T15:00');if(j>=0)extra='<p><b>Green flag, 3 PM:</b> '+r(hr.temperature_2m[j])+'&deg;F, '+r(hr.precipitation_probability[j])+'% rain chance</p>';}
+    out+='<div class="wxday'+(day==='2026-10-25'?' race':'')+'"><h4>'+esc(NAMES[day])+'</h4><div class="hl">'+r(dy.temperature_2m_max[i])+'&deg; <small>/ '+r(dy.temperature_2m_min[i])+'&deg;</small></div>'
+     +'<p><b>'+esc(cond(dy.weather_code[i]))+'</b></p><p>Rain chance: '+r(dy.precipitation_probability_max[i])+'% ('+(dy.precipitation_sum[i]||0)+' in)</p><p>Wind up to '+r(dy.wind_speed_10m_max[i])+' mph &middot; UV '+r(dy.uv_index_max[i])+'</p><p class="small">Sunrise '+sun(dy.sunrise[i])+' &middot; Sunset '+sun(dy.sunset[i])+'</p>'+extra+'</div>';
+  });
+  out+='</div>';
+  // 10 day table
+  out+='<h3 class="kicker" style="margin:18px 0 8px">Next 10 days</h3><div class="tablewrap"><table><tr><th>Day</th><th>Conditions</th><th>High / Low</th><th>Rain</th></tr>';
+  for(var n=0;n<dy.time.length;n++){out+='<tr><td>'+esc(dlabel(dy.time[n]))+'</td><td style="font-weight:600;color:var(--ink)">'+esc(cond(dy.weather_code[n]))+'</td><td style="color:var(--ink);font-weight:700">'+r(dy.temperature_2m_max[n])+'&deg; / '+r(dy.temperature_2m_min[n])+'&deg;</td><td>'+r(dy.precipitation_probability_max[n])+'%</td></tr>'}
+  out+='</table></div>';
+  document.getElementById('wx').innerHTML=out;
+  var when=new Date(ts).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+  document.getElementById('wxmeta').textContent=(stale?'Offline or unavailable: showing saved data from ':'Updated ')+when+' (your device time). Refreshes automatically every 10 minutes.';
+  var pill=document.getElementById('wxnow');pill.hidden=false;pill.innerHTML='COTA now: <b>'+r(cur.temperature_2m)+'&deg;F</b> &middot; '+esc(cond(cur.weather_code));
+}
+function fail(){
+  var saved=null;try{saved=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+  if(saved&&saved.d){try{render(saved.d,true,saved.t);return}catch(e){}}
+  document.getElementById('wx').innerHTML='<div class="note wxerr" style="margin-top:0"><b>Live weather isn&rsquo;t available right now.</b> It needs an internet connection. Typical mid-October Austin: highs 70&ndash;80&deg;F, lows near 60&deg;F. Check <a href="https://www.weather.gov/ewx/" rel="noopener">weather.gov</a> for the current forecast.</div>';
+  document.getElementById('wxmeta').textContent='';
+}
+function load(){
+  var ctl=('AbortController' in window)?new AbortController():null,to=setTimeout(function(){ctl&&ctl.abort()},12000);
+  fetch(URL_,ctl?{signal:ctl.signal}:{}).then(function(x){if(!x.ok)throw 0;return x.json()}).then(function(d){
+    clearTimeout(to);var t=Date.now();render(d,false,t);try{localStorage.setItem(KEY,JSON.stringify({d:d,t:t}))}catch(e){}
+  }).catch(function(){clearTimeout(to);fail()});
+}
+load();setInterval(load,600000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)load()});
+document.getElementById('wxrefresh').addEventListener('click',load);
 })();
 </script>
 </body>
