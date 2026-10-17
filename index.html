@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USGP 2026 COTA Visitor Guide</title>
+<meta name="description" content="Fan's field guide to the 2026 United States Grand Prix at Circuit of the Americas, Oct 22-25, 2026.">
+<style>
+:root{--bg:#0a1633;--panel:#13244f;--panel2:#1b3068;--red:#e3103f;--yel:#ffc906;--grey:#9fb0d6;--light:#dce4f7;--line:#2a4080;--pink:#ff6b8a}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--light);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.stripe{height:14px;background:repeating-linear-gradient(115deg,var(--red) 0 14px,var(--yel) 14px 28px)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+h1,h2,h3{margin:0;text-transform:uppercase;letter-spacing:.01em}
+.hero{padding:34px 0 10px;position:relative}
+.kicker{color:var(--yel);font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.6rem,10vw,5.6rem);line-height:.95;color:#fff;font-weight:900;margin-top:8px}
+.hero h1 span{color:var(--red);display:block}
+.hero .sub{font-weight:800;font-size:1.05rem;margin-top:14px;color:#fff}
+.hero .sub2{color:var(--grey);font-weight:700;font-size:.85rem;margin-top:4px}
+.band{height:34px;margin:28px 0 0;background:var(--red);transform:skewY(-3deg);border-bottom:8px solid var(--yel)}
+.dates{font-size:clamp(2rem,8vw,3rem);font-weight:900;color:#fff;margin:26px 0 14px}
+.dates span{color:var(--yel)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.tile{background:var(--panel);border-left:4px solid var(--yel);padding:12px 14px;border-radius:4px}
+.tile b{display:block;font-size:1.35rem;color:#fff}
+.tile small{color:var(--grey);font-weight:700;font-size:.7rem;letter-spacing:.06em}
+section{margin-top:38px}
+.sec-h{display:flex;gap:12px;align-items:stretch;margin-bottom:6px}
+.sec-h i{display:block;width:10px;background:var(--red);transform:skewX(-14deg);box-shadow:14px 0 0 -2px var(--yel);margin-right:10px}
+.sec-h h2{font-size:clamp(1.6rem,6vw,2.4rem);color:#fff;font-weight:900;line-height:1.05}
+.sec-h .kicker{display:block;margin-bottom:2px}
+.rule{border-top:1px solid var(--line);margin:10px 0 16px}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--panel);border-left:4px solid var(--red);border-radius:4px;padding:14px 16px}
+.card.y{border-left-color:var(--yel)}
+.card.hi{background:var(--panel2)}
+.card h3{font-size:.8rem;color:var(--yel);letter-spacing:.08em;margin-bottom:8px}
+.card p{margin:0 0 6px;font-size:.92rem}
+.card ul{margin:0;padding:0;list-style:none}
+.card li{position:relative;padding-left:18px;margin:0 0 6px;font-size:.92rem}
+.card li:before{content:"";position:absolute;left:2px;top:.55em;width:7px;height:7px;background:var(--yel)}
+.big h3{font-size:1.5rem;color:#fff;letter-spacing:0;margin:2px 0 6px}
+.day{background:var(--panel);border-radius:4px;overflow:hidden}
+.day h3{background:var(--red);color:#fff;padding:7px 12px;display:flex;justify-content:space-between;font-size:.95rem;clip-path:polygon(0 0,100% 0,97% 100%,0 100%)}
+.row{display:grid;grid-template-columns:104px 1fr;gap:8px;padding:5px 12px;font-size:.88rem}
+.row:nth-child(even){background:rgba(255,255,255,.03)}
+.row .t{color:var(--grey);font-weight:700;white-space:nowrap}
+.row.f1{background:var(--panel2);border-left:3px solid var(--red);padding-left:9px;color:#fff;font-weight:800}
+.row.f1 .t{color:var(--pink)}
+.row.mu{color:#fff;font-weight:800}
+.row.mu .t{color:var(--yel)}
+.note{background:var(--panel);border-left:4px solid var(--yel);padding:12px 16px;border-radius:4px;margin-top:12px;font-size:.9rem}
+.can,.cant{border-radius:4px;padding:16px 18px}
+.can{background:var(--panel);border-left:4px solid var(--yel)}
+.cant{background:var(--panel);border-left:4px solid var(--red)}
+.can h3{color:var(--yel);font-size:1.3rem}
+.cant h3{color:var(--pink);font-size:1.3rem}
+.can h3,.cant h3{margin-bottom:10px}
+.can ul,.cant ul{list-style:none;margin:0;padding:0}
+.can li,.cant li{position:relative;padding-left:24px;margin-bottom:7px;font-size:.92rem}
+.can li:before{content:"\2713";position:absolute;left:0;color:var(--yel);font-weight:900}
+.cant li:before{content:"\2715";position:absolute;left:0;color:var(--red);font-weight:900}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th{background:var(--red);color:#fff;text-align:left;padding:7px 12px;text-transform:uppercase;font-size:.8rem;letter-spacing:.05em}
+td{padding:7px 12px}
+tr:nth-child(even) td{background:var(--panel)}
+td:first-child{font-weight:800;color:#fff}
+td:last-child{color:var(--yel);font-weight:800}
+.bars{display:grid;gap:12px;margin-top:4px}
+.bar{display:grid;grid-template-columns:150px 1fr;gap:8px 12px;align-items:center;font-size:.88rem}
+.bar b{color:#fff;font-size:.8rem;letter-spacing:.03em}
+.bar .track{height:10px;background:#08122a;grid-column:2}
+.bar .fill{height:100%;background:var(--yel)}
+.bar .fill.r{background:var(--red)}
+.bar p{margin:0;grid-column:2}
+@media(max-width:520px){.bar{grid-template-columns:1fr}.bar .track,.bar p{grid-column:1}.row{grid-template-columns:92px 1fr}}
+.small{font-size:.78rem;color:var(--grey)}
+footer{margin-top:48px;padding:18px 0 28px;color:var(--grey);font-size:.78rem;border-top:1px solid var(--line)}
+footer p{margin:0 0 8px}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Formula 1 &middot; 2026 Season</div>
+  <h1>United<br>States<span>Grand Prix</span></h1>
+  <div class="sub">CIRCUIT OF THE AMERICAS &middot; AUSTIN, TEXAS</div>
+  <div class="sub2">THE FAN&rsquo;S FIELD GUIDE TO RACE WEEKEND</div>
+  <div class="band"></div>
+  <div class="dates">OCT 22&ndash;25 <span>2026</span></div>
+  <div class="tiles">
+    <div class="tile"><b>3:00 PM</b><small>RACE START (CT)</small></div>
+    <div class="tile"><b>56</b><small>LAPS</small></div>
+    <div class="tile"><b>5.513 KM</b><small>LAP LENGTH</small></div>
+    <div class="tile"><b>20</b><small>TURNS</small></div>
+  </div>
+  <div class="card hi" style="margin-top:12px">
+    <h3>Gates open (Central Time)</h3>
+    <div class="grid g4" style="gap:6px 12px">
+      <div><b>THU Oct 22</b> &mdash; 11:30 AM <span class="small">(lots 11:00)</span></div>
+      <div><b>FRI Oct 23</b> &mdash; 9:00 AM <span class="small">(lots 8:30)</span></div>
+      <div><b>SAT Oct 24</b> &mdash; 8:30 AM <span class="small">(lots 8:00)</span></div>
+      <div><b>SUN Oct 25</b> &mdash; 8:30 AM <span class="small">(lots 8:00)</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="sec-h"><i></i><div><span class="kicker">All times Central (Austin)</span><h2>Weekend Timetable</h2></div></div>
+  <div class="rule"></div>
+  <div class="grid g2">
+    <div class="day"><h3><span>Thursday</span><span>Oct 22</span></h3>
+      <div class="row"><span class="t">11:00 AM</span><span>Parking lots open</span></div>
+      <div class="row"><span class="t">11:30 AM</span><span>Gates open</span></div>
+      <div class="row"><span class="t">12:25&ndash;1:05</span><span>F1 Academy practice</span></div>
+      <div class="row"><span class="t">1:20&ndash;1:50</span><span>Pirelli hot laps</span></div>
+      <div class="row f1"><span class="t">2:00&ndash;4:00</span><span>Pit Lane Walk</span></div>
+      <div class="row"><span class="t">4:30&ndash;5:00</span><span>F1 Academy qualifying</span></div>
+    </div>
+    <div class="day"><h3><span>Friday</span><span>Oct 23</span></h3>
+      <div class="row"><span class="t">8:30 AM</span><span>Parking lots open</span></div>
+      <div class="row"><span class="t">9:00 AM</span><span>Gates open</span></div>
+      <div class="row"><span class="t">9:45&ndash;10:10</span><span>Masters Historic practice</span></div>
+      <div class="row"><span class="t">10:20&ndash;10:55</span><span>Pirelli hot laps</span></div>
+      <div class="row f1"><span class="t">12:30&ndash;1:30</span><span>F1 PRACTICE 1</span></div>
+      <div class="row"><span class="t">2:00&ndash;2:30</span><span>Porsche Carrera Cup practice</span></div>
+      <div class="row"><span class="t">2:55&ndash;3:20</span><span>Masters Historic qualifying</span></div>
+      <div class="row f1"><span class="t">4:00&ndash;5:00</span><span>F1 PRACTICE 2</span></div>
+      <div class="row"><span class="t">5:50&ndash;6:25</span><span>F1 Academy opening race</span></div>
+      <div class="row mu"><span class="t">~7:25&ndash;7:55*</span><span>MAROON 5 &middot; Super Stage</span></div>
+    </div>
+    <div class="day"><h3><span>Saturday</span><span>Oct 24</span></h3>
+      <div class="row"><span class="t">8:00 AM</span><span>Parking lots open</span></div>
+      <div class="row"><span class="t">8:30 AM</span><span>Gates open</span></div>
+      <div class="row"><span class="t">9:10&ndash;9:40</span><span>Porsche Carrera Cup qualifying</span></div>
+      <div class="row"><span class="t">10:10&ndash;10:40</span><span>Masters Historic race 1</span></div>
+      <div class="row"><span class="t">11:00&ndash;11:30</span><span>Porsche driver autographs</span></div>
+      <div class="row f1"><span class="t">12:30&ndash;1:30</span><span>F1 PRACTICE 3</span></div>
+      <div class="row"><span class="t">1:45&ndash;2:10</span><span>Pirelli hot laps</span></div>
+      <div class="row"><span class="t">2:35&ndash;3:15</span><span>Porsche Carrera Cup race 1</span></div>
+      <div class="row f1"><span class="t">4:00&ndash;5:00</span><span>F1 QUALIFYING</span></div>
+      <div class="row"><span class="t">6:00&ndash;6:35</span><span>F1 Academy reverse-grid race</span></div>
+      <div class="row mu"><span class="t">~7:35&ndash;8:05*</span><span>POST MALONE &middot; Super Stage</span></div>
+    </div>
+    <div class="day"><h3><span>Sunday</span><span>Oct 25</span></h3>
+      <div class="row"><span class="t">8:00 AM</span><span>Parking lots open</span></div>
+      <div class="row"><span class="t">8:30 AM</span><span>Gates open</span></div>
+      <div class="row"><span class="t">9:25&ndash;9:55</span><span>Masters Historic race 2</span></div>
+      <div class="row"><span class="t">10:40&ndash;11:10</span><span>F1 Academy feature race</span></div>
+      <div class="row"><span class="t">11:50&ndash;12:30</span><span>Porsche Carrera Cup race 2</span></div>
+      <div class="row f1"><span class="t">1:00&ndash;1:30</span><span>F1 Driver&rsquo;s Parade</span></div>
+      <div class="row"><span class="t">1:30&ndash;1:55</span><span>Pirelli hot laps</span></div>
+      <div class="row"><span class="t">2:44 PM</span><span>National Anthem</span></div>
+      <div class="row f1"><span class="t">3:00 PM</span><span>UNITED STATES GRAND PRIX</span></div>
+      <div class="row f1"><span class="t">~5:00 PM</span><span>Podium + Fan Track Walk</span></div>
+      <div class="row mu"><span class="t">5:30 PM</span><span>ALESSO &middot; Amphitheater</span></div>
+    </div>
+  </div>
+  <div class="note"><b>How to read this:</b> pink rows are Formula 1 sessions and headline moments; gold rows are headline concerts. This is a standard weekend with <b>no sprint race</b>. Thursday (&ldquo;Grand PrixView&rdquo;) is new: $20 standalone, or included with a 3-day ticket. Only Thursday ticket holders can do the Pit Lane Walk, and all Thursday guests enter through the Grand Plaza gates.</div>
+  <div class="note"><b>* Concert times:</b> COTA says Super Stage concerts start <b>60 to 90 minutes after track activity ends</b>, and concert-area gates open about 90 minutes after. Counting from the end of the F1 Academy race (6:25 PM Fri, 6:35 PM Sat) gives the windows shown. COTA hasn&rsquo;t published exact start times; check the COTA app.</div>
+</section>
+
+<section>
+  <div class="sec-h"><i></i><div><span class="kicker">Included with your race ticket</span><h2>The American Soundtrack</h2></div></div>
+  <div class="rule"></div>
+  <div class="grid g3">
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--yel);letter-spacing:.08em">FRIDAY OCT 23</h3><h3>MAROON 5</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--yel);font-weight:800">~7:25&ndash;7:55 PM &middot; after track action</p><p class="small">Sugar &middot; Moves Like Jagger &middot; Girls Like You</p></div>
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--yel);letter-spacing:.08em">SATURDAY OCT 24</h3><h3>POST MALONE</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--yel);font-weight:800">~7:35&ndash;8:05 PM &middot; after track action</p><p class="small">Circles &middot; Sunflower &middot; I Had Some Help</p></div>
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--yel);letter-spacing:.08em">SUNDAY OCT 25</h3><h3>ALESSO</h3><p><b>Germania Insurance Amphitheater</b></p><p style="color:var(--yel);font-weight:800">5:30 PM &middot; post-race</p><p class="small">Heroes (we could be) &middot; Calling</p></div>
+  </div>
+  <p class="kicker" style="margin:18px 0 8px">Smaller stages &middot; The Ranch &middot; La Cantina</p>
+  <div class="grid g3">
+    <div class="day"><h3><span>Fri Oct 23</span></h3>
+      <div class="row"><span class="t">10:15 AM</span><span>The Ranch: BARTLY</span></div>
+      <div class="row"><span class="t">10:15 AM</span><span>La Cantina: Mariachi Voz de Pasi&oacute;n</span></div>
+      <div class="row"><span class="t">11:30 AM</span><span>The Ranch: Restos</span></div>
+      <div class="row"><span class="t">11:30 AM</span><span>La Cantina: Grupo Morros</span></div>
+      <div class="row"><span class="t">2:30 PM</span><span>The Ranch: Jennifer Foster &amp; the Audacity</span></div>
+      <div class="row"><span class="t">2:30 PM</span><span>La Cantina: Los Alcos</span></div></div>
+    <div class="day"><h3><span>Sat Oct 24</span></h3>
+      <div class="row"><span class="t">10:30 AM</span><span>The Ranch: Monica Valli</span></div>
+      <div class="row"><span class="t">10:30 AM</span><span>La Cantina: Midnight Navy</span></div>
+      <div class="row"><span class="t">1:45 PM</span><span>The Ranch: Mayeux &amp; Broussard</span></div>
+      <div class="row"><span class="t">1:45 PM</span><span>La Cantina: Andrea Daniela</span></div>
+      <div class="row"><span class="t">5:15 PM</span><span>The Ranch: Next of Kin</span></div>
+      <div class="row"><span class="t">5:15 PM</span><span>La Cantina: Carrie Rodriguez</span></div></div>
+    <div class="day"><h3><span>Sun Oct 25</span></h3>
+      <div class="row"><span class="t">10:00 AM</span><span>The Ranch: LeTrainiump</span></div>
+      <div class="row"><span class="t">10:00 AM</span><span>La Cantina: lluvii</span></div>
+      <div class="row"><span class="t">12:30 PM</span><span>The Ranch: Moving Panoramas</span></div>
+      <div class="row"><span class="t">12:30 PM</span><span>La Cantina: Sana Sana Musica</span></div>
+      <div class="row"><span class="t">1:45 PM</span><span>The Ranch: Nakia &amp; the Never Not Now</span></div>
+      <div class="row"><span class="t">1:45 PM</span><span>La Cantina: Gina Chavez</span></div></div>
+  </div>
+  <p class="small" style="margin-top:10px"><b>DJs:</b> Raquiqui (La Cantina) &middot; Squibs (Lonestar Land) &middot; Mixer Rogers (Paddock). Lineup times are subject to change.</p>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card"><h3>Getting into the Super Stage</h3><ul>
+      <li>Stage is on the <b>Festival Lawn between Turns 11 and 12</b>.</li>
+      <li>COTA-bought race tickets include Friday and Saturday concert access.</li>
+      <li>GA entry: Infield Entrance near Tunnel 2 / The Ranch, or between Turns 10 and 11.</li>
+      <li>Upgrade holders need a wristband (Maroon 5 from Fri morning, Post Malone from Sat morning): Grand Plaza or Main Grandstand box offices, or Guest Services tents at Turn 9 / infield.</li>
+      <li><b>Alesso:</b> Amphitheater, enter from the Grand Plaza and follow signs.</li></ul></div>
+    <div class="card y"><h3>Super Stage floor / loge: bag rules</h3><p>Tighter than race-day rules. <b>Only</b> these bags are allowed in upgraded concert areas:</p><ul>
+      <li>Clear resealable plastic bag, up to 1 gallon</li>
+      <li>Clear tote, up to 12 &times; 12 &times; 6 in.</li>
+      <li>Small clutch or purse, up to 4.5 &times; 6.5 &times; 2 in. (needn&rsquo;t be clear)</li>
+      <li>Lockers at the entrance to the upgraded areas.</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><i></i><div><span class="kicker">Villages, views and extras</span><h2>Around the Track</h2></div></div>
+  <div class="rule"></div>
+  <div class="grid g2">
+    <div class="card"><h3>Fan villages</h3><ul>
+      <li><b>F1 Fan Zone (Grand Plaza):</b> sim racing, pit-stop challenge, sponsor activations, a mini-ride (tickets sold on arrival).</li>
+      <li><b>The Saloon (Turn 2):</b> Western bar with dueling pianos.</li>
+      <li><b>Texas Tailgate (Turn 3):</b> sports-bar screens, bleacher seating, COTA Pong.</li>
+      <li><b>La Cantina (Turn 6):</b> live cumbia, folkl&oacute;rico dancing, lucha libre, friendship bracelets.</li>
+      <li><b>The Ranch (infield, by Tunnel 2):</b> rodeo area with live music, art cars, calf roping, hat customizing.</li>
+      <li><b>Lonestar Land (Tunnel Road, near Turn 2):</b> BBQ, memorabilia, tattoos, and the World&rsquo;s Largest Cowboy Hat photo op.</li></ul></div>
+    <div class="card y"><h3>Tower Observation Deck</h3><p>251 ft, behind the Amphitheater. <b>$40</b> entry at the Tower base, plus an optional <b>$20</b> champagne toast.</p><ul>
+      <li>Thu &amp; Fri: 12:30&ndash;5:00 PM</li><li>Sat: 9:00 AM&ndash;1:00 PM and 3:30&ndash;5:30 PM</li><li>Sun: 11:00 AM&ndash;6:00 PM</li></ul></div>
+    <div class="card y"><h3>Where to watch (general admission)</h3><ul>
+      <li>Most popular GA spots: <b>Turn 1 Hillside</b>, <b>Turn 11</b>, and <b>Turns 16&ndash;18</b> behind the COTA Tower.</li>
+      <li>Collapsible chairs are fine in GA viewing areas.</li>
+      <li><b>No sitting on grandstand steps</b> (blocks foot traffic, fire hazard).</li>
+      <li><b>No flags or banners in the grandstands.</b></li>
+      <li>Giant video screens are placed around the circuit.</li>
+      <li>COTA says fans reach the best GA spots by arriving early.</li></ul></div>
+    <div class="card"><h3>Fan Track Walk and podium</h3><p>After Sunday&rsquo;s race, fans can walk the starting grid between Turns 20 and 2 for the podium celebration, across from the Main Grandstand. Enter the track only through designated access points: <b>Turn 2, Main Grandstand East, or Main Grandstand West</b>. Follow track officials. Opening ceremonies (driver introductions, anthem) run on track before the race.</p></div>
+    <div class="card"><h3>Merch, power and paddock</h3><ul>
+      <li><b>Merchandise booths:</b> Grand Plaza, Main Grandstand and Lonestar Land. COTA Karting store at the Main Grandstand.</li>
+      <li><b>Phone charging stations</b> exist; ask a Guest Services team member to point you to one.</li>
+      <li><b>F1 Paddock and pits are restricted</b> to credentialed guests. The <b>Support Paddock</b> is open to the public.</li></ul></div>
+    <div class="card y"><h3>COTALAND (next door)</h3><p>Austin&rsquo;s new theme park opened Sept 26, 2026. <b>Admission is separate</b> from your race ticket.</p><ul>
+      <li>Circuit Breaker: Texas&rsquo; only tilt coaster (48 in. min)</li>
+      <li>Palindrome: first U.S. infinity shuttle coaster (48 in.)</li>
+      <li>Soaring Eagle Zip Line over the main straight (extra fee)</li>
+      <li>Hot Lap, COTA Karting, mini golf (extra fee)</li></ul></div>
+    <div class="card"><h3>Grand PrixView Thursday</h3><ul>
+      <li>Limited areas open: <b>Grand Plaza, COTALAND, Main Grandstand</b> (full map to come).</li>
+      <li>Enter through the Grand Plaza gates.</li>
+      <li><b>Parking:</b> Lots F and H are included with a Thursday ticket. A weekend parking pass does <b>not</b> cover Thursday.</li>
+      <li>Premium Garage parking can be bought through Ticketmaster.</li></ul></div>
+    <div class="card y hi"><h3>Fan duty: cheer for Max</h3><p>Cheering for <b>Max Verstappen</b> is not optional. When the grandstands start the <b>&ldquo;do do do do do do, Max Verstappen&rdquo;</b> chant, the Seven Nation Army-style fan favorite, you join in. Orange-clad crowds are tradition at his races, so expect to hear it all weekend, especially from Turn 1 Hillside and the Fan Zone. Only rule: no flags or banners in the grandstands.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><i></i><div><span class="kicker">Security checks every guest</span><h2>Gate Rules</h2></div></div>
+  <div class="rule"></div>
+  <div class="grid g2">
+    <div class="can"><h3>You can bring</h3><ul>
+      <li><b>Bags up to 12 &times; 12 &times; 20 in.</b> Items can stay in the bag during screening.</li>
+      <li><b>ONE empty water bottle</b>, 32 oz or smaller, no glass. Empty CamelBaks are fine.</li>
+      <li>Binoculars and blankets</li>
+      <li>Portable collapsible chairs; collapsible wagons (GA only)</li>
+      <li>Small hand-held umbrellas</li>
+      <li>Sunscreen in a plastic bottle (no aerosol)</li>
+      <li>Personal cameras with standard detachable lenses</li>
+      <li>Strollers</li>
+      <li>Event-related signs up to 11 &times; 17 in., no pole</li>
+      <li>Necessary medical items (inspected at entry)</li>
+      <li><b>Portable phone battery / power bank.</b> COTA&rsquo;s policies never mention them, allowed or banned. Several fan guides say to bring one and carry it in hand through the metal detector. COTA hasn&rsquo;t confirmed it, so check first. Fully charge it, and keep a short cable in your bag.</li></ul></div>
+    <div class="cant"><h3>Leave it at home</h3><ul>
+      <li><b>Outside food and drinks</b>, including alcohol and 0% beer/cider</li>
+      <li><b>Coolers, thermoses, ice chests</b></li>
+      <li>Glass containers of any kind</li>
+      <li>Bags over 12 &times; 12 &times; 20 in., briefcases, luggage, computer bags</li>
+      <li>Tripods, monopods, bipods, detachable telephoto lenses; pro video gear</li>
+      <li>Non-collapsible chairs, tents, canopies</li>
+      <li>Drones</li>
+      <li>Weapons: guns, knives, pepper spray, handcuffs, nightsticks</li>
+      <li>Fireworks, flares, explosives</li>
+      <li>Illegal substances incl. marijuana; e-liquid / vape juice</li>
+      <li>Bikes, scooters, skateboards, skates, hoverboards, Segways, golf carts</li>
+      <li>Balls, frisbees, balloons, horns, radios, bells, whistles, instruments, laser pointers</li>
+      <li>Pets (service animals only)</li>
+      <li>Signs over 11 &times; 17 in. or on poles; unauthorized merch or promo material</li>
+      <li>Flags and banners in the grandstands</li>
+      <li>Revealing or offensive clothing (staff decide)</li></ul></div>
+  </div>
+  <div class="grid g3" style="margin-top:12px">
+    <div class="card y"><h3>The water bottle question</h3><p>COTA&rsquo;s written policy bans <b>glass</b>, not metal. But <b>thermoses are banned</b>, and an insulated steel bottle can look like one at the gate. One fan guide says metal bottles get confiscated. <b>Plastic is the safe call.</b> Refills are free at Turn 1, Turn 3, Main Grandstand, Grand Plaza.</p></div>
+    <div class="card y"><h3>Smoking, re-entry, lockers</h3><p>Smoking/vaping only in authorized areas 15 ft from entrances; never in covered areas or grandstands. <b>Re-entry is allowed</b>: scan out first, expect screening again. <b>Lockers</b> at the Grand Plaza entry gates: first come, first served, small fee.</p></div>
+    <div class="card y"><h3>Nothing gets returned</h3><p>Items left at the entrance are not returned. Leave banned items at home or in your vehicle. Walk-through detectors speed entry, and bags are still searched. Gate staff have the final say.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><i></i><div><span class="kicker">Every car needs a pass</span><h2>Parking &amp; Shuttles</h2></div></div>
+  <div class="rule"></div>
+  <p class="kicker" style="margin:0 0 8px">Official COTA parking &middot; starting price per pass (Ticketmaster)</p>
+  <table>
+    <tr><th>Lot</th><th>Near</th><th>From</th></tr>
+    <tr><td>Lot F</td><td>Turns 11&ndash;19</td><td>$52+</td></tr>
+    <tr><td>Park N Ride</td><td>Drop-off near Turn 11</td><td>$52+</td></tr>
+    <tr><td>Lot R</td><td>Turn 11</td><td>$70.83+</td></tr>
+    <tr><td>Lot K</td><td>Turn 11</td><td>$82.83+</td></tr>
+    <tr><td>Lot L</td><td>Turns 9&ndash;11</td><td>$100.17+</td></tr>
+    <tr><td>Lot C Garage</td><td>Turns 12&ndash;19</td><td>$113+</td></tr>
+    <tr><td>Lot T</td><td>Turn 1</td><td>$134.50+</td></tr>
+  </table>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card"><h3>Parking rules and routes</h3><ul>
+      <li>No pass, no entry to COTA Blvd. Pass goes in the vehicle before you arrive.</li>
+      <li>Closest lots are still a 15&ndash;20 minute walk to the gates (fan reports).</li>
+      <li><b>Lots C&ndash;H, K:</b> TX-130 S (toll) to Exit 451, left on Elroy Rd, 2 mi to COTA Blvd, right.</li>
+      <li><b>Lots L, R, S:</b> same exit and road, follow signs about 2 mi on Elroy Rd.</li>
+      <li><b>Lots A, N, T:</b> TX-130 S to Exit 453, left on FM-812, about 1.5 mi.</li>
+      <li>From Houston/Bastrop: Hwy 71 W to the Kellam Rd exit, then Kellam Rd about 3 mi to Elroy Rd.</li>
+      <li>Tailgating allowed in lots, limited to one parking space. Camping only in designated lots with passes.</li></ul></div>
+    <div class="card y"><h3>Official shuttles</h3><ul>
+      <li><b>Downtown (Waterloo Park): from $49</b> round trip.</li>
+      <li><b>Northeast (Travis County Expo Center): from $34</b> round trip.</li>
+      <li>Dedicated bus lane and a front-gate drop-off near the Grand Plaza entry gates.</li>
+      <li>Buses run continuously from <b>60 minutes before gates open</b>.</li>
+      <li><b>Last inbound:</b> 6:30 PM Fri and Sat. Return service ends <b>60 min after the music stops</b>. COTA lists Sunday&rsquo;s last inbound as 2:00 PM (the page itself looks inconsistent; confirm).</li>
+      <li>Longest Sunday transit: 9:30 AM&ndash;12:15 PM.</li>
+      <li>Max 8 passes per order, cards only, kids 3 and under free. Show your mobile ticket for a color-coded wristband.</li>
+      <li>Standby passes at pickup aren&rsquo;t guaranteed.</li></ul></div>
+    <div class="card y"><h3>Other ways in</h3><ul>
+      <li><b>Free trams</b> run continuously around the perimeter and stop at several locations.</li>
+      <li><b>Bike:</b> COTA publishes a bike route map.</li>
+      <li><b>BLADE helicopter</b> from Creedmoor: about 5 minutes versus up to 3 hours by road, with SUV transfer to the Turn 1 VIP entrance. Reserve through BLADE.</li>
+      <li>No train or metro serves the circuit.</li></ul></div>
+    <div class="card"><h3>Uber, Lyft and taxis</h3><ul>
+      <li><b>North McAngus lot only.</b> COTA Blvd is closed to rideshare.</li>
+      <li>Free tram from McAngus to the Grand Plaza front gates (fans report a 10&ndash;30 minute walk if you skip it).</li>
+      <li>Phone signal gets unreliable when the crowd leaves.</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><i></i><div><span class="kicker">Plan your exit before your entry</span><h2>Getting Out &amp; Staying</h2></div></div>
+  <div class="rule"></div>
+  <div class="tiles">
+    <div class="tile"><b>400K+</b><small>EST. 2025 WEEKEND CROWD</small></div>
+    <div class="tile"><b>60&ndash;120</b><small>MIN TYPICAL LOT EXIT</small></div>
+    <div class="tile"><b>2&ndash;4 HR</b><small>WORST LOT REPORTS</small></div>
+    <div class="tile"><b>35 MIN</b><small>ONE FAN&rsquo;S SHUTTLE RIDE</small></div>
+  </div>
+  <div class="card hi" style="margin-top:12px"><h3>Getting out after the flag</h3>
+    <div class="bars">
+      <div class="bar"><b>LEAVE IMMEDIATELY</b><div class="track"><div class="fill r" style="width:95%"></div></div><p>Heavy traffic on every road out. Leaving before the flag still lands you in the same jam.</p></div>
+      <div class="bar"><b>WAIT 60&ndash;90 MIN</b><div class="track"><div class="fill" style="width:45%"></div></div><p>Reports say traffic clears noticeably. Alesso (5:30 PM) and the Fan Track Walk fill the time.</p></div>
+      <div class="bar"><b>BOOKED SHUTTLE</b><div class="track"><div class="fill" style="width:20%"></div></div><p>Bus lanes. One 2025 reviewer was back at the hotel in 35 minutes.</p></div>
+      <div class="bar"><b>RIDESHARE</b><div class="track"><div class="fill r" style="width:85%"></div></div><p>2&ndash;3 hour waits at the McAngus Lot reported, with $150&ndash;$300 surge fares.</p></div>
+    </div>
+    <p class="small" style="margin-top:12px">Bar length = relative wait. Worst reported lots: <b>Lot F</b> (single exit lane), <b>Lot T</b> (3+ hours), <b>Lot N</b> (exits onto busy Elroy Rd). COTA&rsquo;s own advice: trips home take longer than usual. Exit times are fan and third-party reports; COTA publishes no figure.</p>
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card y"><h3>Crowd size</h3><p>2025 was a <b>sellout</b>, estimated at <b>400,000+</b> for the weekend (no official figure released). 2024 was estimated near 430,000. Promoter Bobby Epstein said in July that 2026 was <b>on pace for a record year</b>. Expect long lines at security, concessions and shuttles, especially Sunday.</p></div>
+    <div class="card"><h3>From the airport and downtown</h3><ul>
+      <li>Austin-Bergstrom to the circuit is about 12 miles. One guide cites about <b>$35 by Uber (23 min)</b> and the <b>CapMetro 20 bus at $1.25</b>; the source doesn&rsquo;t say which trip those fares cover.</li>
+      <li>Downtown is about 15 miles from COTA.</li>
+      <li>Uber/Lyft fares spike after the race.</li></ul></div>
+    <div class="card y"><h3>Lodging</h3><p>One guide (checked Sept 28) estimates downtown hotels at <b>about $260 a night normally versus roughly $700&ndash;$1,500 during the Grand Prix</b>, before 15% tax. Airport-area hotels are closer and cheaper; Round Rock and Pflugerville are cheaper still but need a car and are up to 19 miles out. These are estimates, not quotes.</p></div>
+    <div class="card"><h3>Forecast</h3><p>I couldn&rsquo;t find a reliable day-by-day forecast for Oct 22&ndash;25 when this was compiled (Oct 17). Typical mid-October Austin: highs about 70&ndash;80&deg;F, lows down to about 60&deg;F (austin.gp). AccuWeather&rsquo;s monthly range for Oct 2026 runs 71&ndash;90&deg;F highs and 45&ndash;66&deg;F lows. It&rsquo;s rain or shine at COTA.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><i></i><div><span class="kicker">The fine print</span><h2>Know Before You Go</h2></div></div>
+  <div class="rule"></div>
+  <div class="grid g2">
+    <div class="card"><h3>Payment</h3><p>COTA is <b>cashless</b>. The race-weekend guide lists Visa, Discover and Mastercard; the venue policies page also lists American Express.</p></div>
+    <div class="card"><h3>First aid</h3><p>Grand Plaza, Main Grandstand, and the Paddock medical center.</p></div>
+    <div class="card"><h3>Alcohol</h3><p>21+ with valid ID (checked if you look 30 or younger). 2-drink limit per ID per purchase. Sales stop about 30 minutes before the event ends.</p></div>
+    <div class="card"><h3>Need help?</h3><p>Text <b>COTA + your question to 69050</b> (include your location). Emergencies: call 911 or flag any COTA staff.</p></div>
+    <div class="card"><h3>Tickets</h3><p>Mobile tickets through the COTA app (parking passes and 3-day GA wristbands are the exceptions). <b>Register your GA wristband before race weekend</b> on the Frontgate Tickets page; once cinched it won&rsquo;t loosen. All sales final. Resale on property is prohibited.</p></div>
+    <div class="card"><h3>Lost &amp; found</h3><p>Guest Services tents (between the Main Entry Gates and Grand Plaza); QR codes there to file a report. Items held 14 days.</p></div>
+    <div class="card"><h3>Kids</h3><p>Children 3 and older need a ticket for F1.</p></div>
+    <div class="card"><h3>Accessibility</h3><p>Accessible parking in Lots A, D, H. Accessible shuttles: text COTA to 69050. ADA golf carts at ADA tents. Sensory rooms in Grand Plaza. Accessible grandstand seating at Main Grandstand, Turn 12, Turn 15.</p></div>
+    <div class="card"><h3>Box offices</h3><p><b>Grand Plaza</b> (opens Mon Oct 19): Mon&ndash;Thu 10&ndash;5, Fri &amp; Sat 8:30&ndash;8:00, Sun 8:30&ndash;5.<br><b>Main Grandstand:</b> Fri 9:30&ndash;4:50, Sat 8:30&ndash;4:30, Sun 8:30&ndash;2:30.</p></div>
+    <div class="card"><h3>Nursing &amp; restrooms</h3><p>Nursing pods: Main Grandstand, Grand Plaza, Turn 1, Turn 3. Permanent restrooms: Grand Plaza, Amphitheater bowl, Main Grandstand, Turn 1.</p></div>
+    <div class="card"><h3>App</h3><p>Download the COTA app for maps, schedules and food locations. COTA says to update it in settings on <b>Wednesday, Oct 21</b>.</p></div>
+    <div class="card"><h3>Car trouble</h3><p>Free jump-starts until one hour after the event: 512-655-6220. No lockout help.</p></div>
+    <div class="card"><h3>Food</h3><p>BBQ, Tex-Mex, pizza, Turkish wraps, Thai, vegan and vegetarian, plus local food trucks. One older review lists a beer at $19.</p></div>
+    <div class="card"><h3>Severe weather</h3><p>Rain or shine. Lightning triggers shelter announcements on the PA and video boards. Schedule changes post to social media and the app.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Sources:</b> circuitoftheamericas.com (Venue Policies, F1 Schedule, American Soundtrack lineup, Getting to COTA, F1 Parking, F1 Shuttles, Know Before You Go); help.thecircuit.com (gate security, lockers, Thursday FAQs, GA areas, merchandise, podium, paddock, wristband, Super Stage start); cotaland.com; austin.gp (visitor rules, fan zones, weather guidance); racer.com; Reuters via The Star (attendance); grandprixpal.com, oversteer48.com, parkingaccess.com, pixidia.com, Tripadvisor (traffic, prices); AccuWeather. Traffic times, hotel prices and the old-review beer price are third-party or anecdotal.</p>
+  <p>Unofficial fan guide compiled Oct 17, 2026. Times and policies are subject to change; confirm with COTA. Not affiliated with Formula 1, COTA or any team. The color theme is inspired by team liveries only.</p>
+</footer>
+</div>
+<div class="stripe"></div>
+</body>
+</html>
