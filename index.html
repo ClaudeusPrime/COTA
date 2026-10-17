@@ -5,97 +5,149 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>USGP 2026 COTA Visitor Guide</title>
 <meta name="description" content="Fan's field guide to the 2026 United States Grand Prix at Circuit of the Americas, Oct 22-25, 2026.">
+<meta name="theme-color" content="#0a1633">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="USGP 2026">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" href="icons/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <style>
-:root{--bg:#0a1633;--panel:#13244f;--panel2:#1b3068;--red:#e3103f;--yel:#ffc906;--grey:#9fb0d6;--light:#dce4f7;--line:#2a4080;--pink:#ff6b8a}
+:root{--bg:#f3f5fa;--panel:#ffffff;--panel2:#eef2fb;--red:#e3103f;--redd:#c10a34;--yel:#ffc906;--amber:#8a6400;--navy:#0a1633;--ink:#14213d;--grey:#5b6785;--line:#d5dcec}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--light);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
 .stripe{height:14px;background:repeating-linear-gradient(115deg,var(--red) 0 14px,var(--yel) 14px 28px)}
 .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
 h1,h2,h3{margin:0;text-transform:uppercase;letter-spacing:.01em}
-.hero{padding:34px 0 10px;position:relative}
-.kicker{color:var(--yel);font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
-.hero h1{font-size:clamp(2.6rem,10vw,5.6rem);line-height:.95;color:#fff;font-weight:900;margin-top:8px}
+.hero{background:#fff;border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:22px;padding-bottom:6px}
+.kicker{color:var(--amber);font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.4rem,10vw,5rem);line-height:.95;color:var(--navy);font-weight:900;margin-top:6px}
 .hero h1 span{color:var(--red);display:block}
-.hero .sub{font-weight:800;font-size:1.05rem;margin-top:14px;color:#fff}
-.hero .sub2{color:var(--grey);font-weight:700;font-size:.85rem;margin-top:4px}
-.band{height:34px;margin:28px 0 0;background:var(--red);transform:skewY(-3deg);border-bottom:8px solid var(--yel)}
-.dates{font-size:clamp(2rem,8vw,3rem);font-weight:900;color:#fff;margin:26px 0 14px}
-.dates span{color:var(--yel)}
+.hero .sub{font-weight:800;font-size:1rem;margin-top:12px;color:var(--navy)}
+.hero .sub2{color:var(--grey);font-weight:700;font-size:.82rem;margin-top:2px}
+.band{height:26px;margin:22px 0 0;background:var(--red);transform:skewY(-3deg);border-bottom:7px solid var(--yel)}
+.dates{font-size:clamp(1.9rem,8vw,2.8rem);font-weight:900;color:var(--navy);margin:20px 0 6px}
+.dates span{color:var(--red)}
+.count{display:inline-block;background:var(--navy);color:#fff;font-weight:800;border-radius:4px;padding:8px 14px;margin:4px 0 14px;font-size:.95rem}
+.count b{color:var(--yel);font-size:1.1rem}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
-.tile{background:var(--panel);border-left:4px solid var(--yel);padding:12px 14px;border-radius:4px}
-.tile b{display:block;font-size:1.35rem;color:#fff}
+.tile{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--yel);padding:12px 14px;border-radius:4px}
+.tile b{display:block;font-size:1.35rem;color:var(--navy)}
 .tile small{color:var(--grey);font-weight:700;font-size:.7rem;letter-spacing:.06em}
-section{margin-top:38px}
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:4px solid var(--red);box-shadow:0 2px 8px rgba(10,22,51,.25)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-top:8px;padding-bottom:0}
+nav.tabs .wrap::-webkit-scrollbar{display:none}
+nav.tabs button{flex:0 0 auto;appearance:none;border:0;background:transparent;color:#c9d4f0;font:inherit;font-weight:800;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;padding:12px 14px;min-height:44px;cursor:pointer;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap}
+nav.tabs button:hover{color:#fff}
+nav.tabs button[aria-selected="true"]{color:#fff;border-bottom-color:var(--yel)}
+nav.tabs button:focus-visible{outline:2px solid var(--yel);outline-offset:-2px}
+.js [data-panel]{display:none}
+.js [data-panel].on{display:block}
+section{padding-top:26px}
 .sec-h{display:flex;gap:12px;align-items:stretch;margin-bottom:6px}
-.sec-h i{display:block;width:10px;background:var(--red);transform:skewX(-14deg);box-shadow:14px 0 0 -2px var(--yel);margin-right:10px}
-.sec-h h2{font-size:clamp(1.6rem,6vw,2.4rem);color:#fff;font-weight:900;line-height:1.05}
+.sec-h i{display:block;width:10px;background:var(--red);transform:skewX(-14deg);box-shadow:14px 0 0 -2px var(--yel);margin-right:10px;flex:0 0 10px}
+.sec-h h2{font-size:clamp(1.5rem,6vw,2.3rem);color:var(--navy);font-weight:900;line-height:1.05}
 .sec-h .kicker{display:block;margin-bottom:2px}
-.rule{border-top:1px solid var(--line);margin:10px 0 16px}
+.rule{border-top:2px solid var(--line);margin:10px 0 16px}
 .grid{display:grid;gap:12px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.g4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:var(--panel);border-left:4px solid var(--red);border-radius:4px;padding:14px 16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:4px;padding:14px 16px;box-shadow:0 1px 2px rgba(10,22,51,.05)}
 .card.y{border-left-color:var(--yel)}
 .card.hi{background:var(--panel2)}
-.card h3{font-size:.8rem;color:var(--yel);letter-spacing:.08em;margin-bottom:8px}
-.card p{margin:0 0 6px;font-size:.92rem}
+.card h3{font-size:.82rem;color:var(--redd);letter-spacing:.08em;margin-bottom:8px}
+.card p{margin:0 0 6px;font-size:.95rem}
 .card ul{margin:0;padding:0;list-style:none}
-.card li{position:relative;padding-left:18px;margin:0 0 6px;font-size:.92rem}
-.card li:before{content:"";position:absolute;left:2px;top:.55em;width:7px;height:7px;background:var(--yel)}
-.big h3{font-size:1.5rem;color:#fff;letter-spacing:0;margin:2px 0 6px}
-.day{background:var(--panel);border-radius:4px;overflow:hidden}
-.day h3{background:var(--red);color:#fff;padding:7px 12px;display:flex;justify-content:space-between;font-size:.95rem;clip-path:polygon(0 0,100% 0,97% 100%,0 100%)}
-.row{display:grid;grid-template-columns:104px 1fr;gap:8px;padding:5px 12px;font-size:.88rem}
-.row:nth-child(even){background:rgba(255,255,255,.03)}
+.card li{position:relative;padding-left:18px;margin:0 0 6px;font-size:.95rem}
+.card li:before{content:"";position:absolute;left:2px;top:.55em;width:7px;height:7px;background:var(--red)}
+.card.y li:before{background:var(--yel);box-shadow:0 0 0 1px #d4a900}
+.big h3{font-size:1.5rem;color:var(--navy);letter-spacing:0;margin:2px 0 6px}
+.big p{color:var(--ink)}
+.day{background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.day h3{background:var(--red);color:#fff;padding:8px 12px;display:flex;justify-content:space-between;font-size:.95rem}
+.row{display:grid;grid-template-columns:106px 1fr;gap:8px;padding:6px 12px;font-size:.92rem}
+.row:nth-child(even){background:#f6f8fc}
 .row .t{color:var(--grey);font-weight:700;white-space:nowrap}
-.row.f1{background:var(--panel2);border-left:3px solid var(--red);padding-left:9px;color:#fff;font-weight:800}
-.row.f1 .t{color:var(--pink)}
-.row.mu{color:#fff;font-weight:800}
-.row.mu .t{color:var(--yel)}
-.note{background:var(--panel);border-left:4px solid var(--yel);padding:12px 16px;border-radius:4px;margin-top:12px;font-size:.9rem}
-.can,.cant{border-radius:4px;padding:16px 18px}
-.can{background:var(--panel);border-left:4px solid var(--yel)}
-.cant{background:var(--panel);border-left:4px solid var(--red)}
-.can h3{color:var(--yel);font-size:1.3rem}
-.cant h3{color:var(--pink);font-size:1.3rem}
+.row.f1{background:#fde7ed;border-left:4px solid var(--red);padding-left:8px;color:var(--navy);font-weight:800}
+.row.f1 .t{color:var(--redd)}
+.row.mu{background:#fff5cc;border-left:4px solid var(--yel);padding-left:8px;color:var(--navy);font-weight:800}
+.row.mu .t{color:var(--amber)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.chips button{appearance:none;border:2px solid var(--navy);background:#fff;color:var(--navy);font:inherit;font-weight:800;font-size:.82rem;padding:8px 14px;min-height:40px;border-radius:999px;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
+.chips button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.note{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--yel);padding:12px 16px;border-radius:4px;margin-top:12px;font-size:.93rem}
+.can,.cant{border-radius:4px;padding:16px 18px;background:var(--panel);border:1px solid var(--line);box-shadow:0 1px 2px rgba(10,22,51,.05)}
+.can{border-left:5px solid #1a9e55}
+.cant{border-left:5px solid var(--red)}
+.can h3{color:#0f7a40;font-size:1.3rem}
+.cant h3{color:var(--redd);font-size:1.3rem}
 .can h3,.cant h3{margin-bottom:10px}
 .can ul,.cant ul{list-style:none;margin:0;padding:0}
-.can li,.cant li{position:relative;padding-left:24px;margin-bottom:7px;font-size:.92rem}
-.can li:before{content:"\2713";position:absolute;left:0;color:var(--yel);font-weight:900}
+.can li,.cant li{position:relative;padding-left:26px;margin-bottom:8px;font-size:.95rem}
+.can li:before{content:"\2713";position:absolute;left:0;color:#1a9e55;font-weight:900}
 .cant li:before{content:"\2715";position:absolute;left:0;color:var(--red);font-weight:900}
-table{width:100%;border-collapse:collapse;font-size:.92rem}
-th{background:var(--red);color:#fff;text-align:left;padding:7px 12px;text-transform:uppercase;font-size:.8rem;letter-spacing:.05em}
-td{padding:7px 12px}
-tr:nth-child(even) td{background:var(--panel)}
-td:first-child{font-weight:800;color:#fff}
-td:last-child{color:var(--yel);font-weight:800}
-.bars{display:grid;gap:12px;margin-top:4px}
-.bar{display:grid;grid-template-columns:150px 1fr;gap:8px 12px;align-items:center;font-size:.88rem}
-.bar b{color:#fff;font-size:.8rem;letter-spacing:.03em}
-.bar .track{height:10px;background:#08122a;grid-column:2}
-.bar .fill{height:100%;background:var(--yel)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th{background:var(--red);color:#fff;text-align:left;padding:8px 12px;text-transform:uppercase;font-size:.8rem;letter-spacing:.05em}
+td{padding:8px 12px}
+tr:nth-child(even) td{background:#f6f8fc}
+td:first-child{font-weight:800;color:var(--navy)}
+td:last-child{color:var(--redd);font-weight:800;white-space:nowrap}
+.bars{display:grid;gap:14px;margin-top:4px}
+.bar{display:grid;grid-template-columns:150px 1fr;gap:6px 12px;align-items:center;font-size:.92rem}
+.bar b{color:var(--navy);font-size:.8rem;letter-spacing:.03em}
+.bar .track{height:12px;background:#dfe5f3;grid-column:2;border-radius:2px;overflow:hidden}
+.bar .fill{height:100%;background:#e0a800}
 .bar .fill.r{background:var(--red)}
 .bar p{margin:0;grid-column:2}
-@media(max-width:520px){.bar{grid-template-columns:1fr}.bar .track,.bar p{grid-column:1}.row{grid-template-columns:92px 1fr}}
-.small{font-size:.78rem;color:var(--grey)}
-footer{margin-top:48px;padding:18px 0 28px;color:var(--grey);font-size:.78rem;border-top:1px solid var(--line)}
+.small{font-size:.8rem;color:var(--grey)}
+.check{list-style:none;margin:0;padding:0}
+.check li{padding:0;margin:0 0 2px;font-size:.95rem}
+.check li:before{display:none}
+.check label{display:flex;gap:12px;align-items:center;padding:10px 4px;min-height:44px;cursor:pointer;border-bottom:1px solid var(--line)}
+.check input{width:22px;height:22px;accent-color:var(--red);flex:0 0 22px}
+.check input:checked+span{text-decoration:line-through;color:var(--grey)}
+.btn{appearance:none;border:2px solid var(--navy);background:#fff;color:var(--navy);font:inherit;font-weight:800;font-size:.8rem;padding:8px 14px;min-height:40px;border-radius:4px;cursor:pointer;margin-top:10px;text-transform:uppercase}
+@media(max-width:560px){
+ .hero .wrap{padding-top:14px;padding-bottom:2px}
+ .hero h1{font-size:2.05rem;line-height:1.02}
+ .hero h1 br{display:none}.hero h1 span{display:inline}
+ .hero .sub{font-size:.85rem;margin-top:8px}.hero .sub2,.band{display:none}
+ .dates{font-size:1.5rem;margin:8px 0 4px}
+ .count{margin:2px 0 12px;font-size:.85rem;padding:6px 10px}
+
+ body{font-size:16px}
+ .bar{grid-template-columns:1fr}.bar .track,.bar p{grid-column:1}
+ .row{grid-template-columns:96px 1fr;padding:7px 10px}
+ .card,.can,.cant{padding:14px}
+ nav.tabs button{padding:12px 12px}
+}
+footer{margin-top:44px;padding:18px 0 28px;color:var(--grey);font-size:.8rem;border-top:2px solid var(--line)}
 footer p{margin:0 0 8px}
+@media print{nav.tabs,.chips,.count,.btn{display:none}.js [data-panel]{display:block!important}body{background:#fff}.card,.day,.can,.cant{break-inside:avoid;box-shadow:none}}
 </style>
 </head>
 <body>
 <div class="stripe"></div>
-<div class="wrap">
-
-<header class="hero">
+<header class="hero"><div class="wrap">
   <div class="kicker">Formula 1 &middot; 2026 Season</div>
-  <h1>United<br>States<span>Grand Prix</span></h1>
+  <h1>United <br>States <span>Grand Prix</span></h1>
   <div class="sub">CIRCUIT OF THE AMERICAS &middot; AUSTIN, TEXAS</div>
   <div class="sub2">THE FAN&rsquo;S FIELD GUIDE TO RACE WEEKEND</div>
   <div class="band"></div>
   <div class="dates">OCT 22&ndash;25 <span>2026</span></div>
-  <div class="tiles">
+  <div class="count" id="count" aria-live="off">Race start: <b>Sun Oct 25, 3:00 PM CT</b></div>
+</div></header>
+<nav class="tabs" aria-label="Guide sections"><div class="wrap" role="tablist"><button role="tab" id="tab-schedule" aria-controls="p-schedule" aria-selected="true" tabindex="0" data-tab="schedule">Schedule</button><button role="tab" id="tab-music" aria-controls="p-music" aria-selected="false" tabindex="-1" data-tab="music">Music</button><button role="tab" id="tab-track" aria-controls="p-track" aria-selected="false" tabindex="-1" data-tab="track">Track</button><button role="tab" id="tab-rules" aria-controls="p-rules" aria-selected="false" tabindex="-1" data-tab="rules">Gate Rules</button><button role="tab" id="tab-travel" aria-controls="p-travel" aria-selected="false" tabindex="-1" data-tab="travel">Parking</button><button role="tab" id="tab-exit" aria-controls="p-exit" aria-selected="false" tabindex="-1" data-tab="exit">Exit &amp; Stay</button><button role="tab" id="tab-info" aria-controls="p-info" aria-selected="false" tabindex="-1" data-tab="info">Fine Print</button></div></nav>
+<main class="wrap">
+
+<section data-panel="schedule" id="p-schedule" role="tabpanel" aria-labelledby="tab-schedule" class="on">
+  <div class="sec-h"><i></i><div><span class="kicker">All times Central (Austin)</span><h2>Weekend Timetable</h2></div></div>
+    <div class="tiles" style="margin-top:4px">
     <div class="tile"><b>3:00 PM</b><small>RACE START (CT)</small></div>
     <div class="tile"><b>56</b><small>LAPS</small></div>
     <div class="tile"><b>5.513 KM</b><small>LAP LENGTH</small></div>
@@ -110,13 +162,11 @@ footer p{margin:0 0 8px}
       <div><b>SUN Oct 25</b> &mdash; 8:30 AM <span class="small">(lots 8:00)</span></div>
     </div>
   </div>
-</header>
 
-<section>
-  <div class="sec-h"><i></i><div><span class="kicker">All times Central (Austin)</span><h2>Weekend Timetable</h2></div></div>
   <div class="rule"></div>
-  <div class="grid g2">
-    <div class="day"><h3><span>Thursday</span><span>Oct 22</span></h3>
+  <div class="chips" role="group" aria-label="Filter by day"><button type="button" data-day="all" aria-pressed="true">All days</button><button type="button" data-day="thu" aria-pressed="false">Thu</button><button type="button" data-day="fri" aria-pressed="false">Fri</button><button type="button" data-day="sat" aria-pressed="false">Sat</button><button type="button" data-day="sun" aria-pressed="false">Sun</button></div>
+  <div class="grid g2" id="sched">
+    <div class="day" data-d="thu"><h3><span>Thursday</span><span>Oct 22</span></h3>
       <div class="row"><span class="t">11:00 AM</span><span>Parking lots open</span></div>
       <div class="row"><span class="t">11:30 AM</span><span>Gates open</span></div>
       <div class="row"><span class="t">12:25&ndash;1:05</span><span>F1 Academy practice</span></div>
@@ -124,7 +174,7 @@ footer p{margin:0 0 8px}
       <div class="row f1"><span class="t">2:00&ndash;4:00</span><span>Pit Lane Walk</span></div>
       <div class="row"><span class="t">4:30&ndash;5:00</span><span>F1 Academy qualifying</span></div>
     </div>
-    <div class="day"><h3><span>Friday</span><span>Oct 23</span></h3>
+    <div class="day" data-d="fri"><h3><span>Friday</span><span>Oct 23</span></h3>
       <div class="row"><span class="t">8:30 AM</span><span>Parking lots open</span></div>
       <div class="row"><span class="t">9:00 AM</span><span>Gates open</span></div>
       <div class="row"><span class="t">9:45&ndash;10:10</span><span>Masters Historic practice</span></div>
@@ -136,7 +186,7 @@ footer p{margin:0 0 8px}
       <div class="row"><span class="t">5:50&ndash;6:25</span><span>F1 Academy opening race</span></div>
       <div class="row mu"><span class="t">~7:25&ndash;7:55*</span><span>MAROON 5 &middot; Super Stage</span></div>
     </div>
-    <div class="day"><h3><span>Saturday</span><span>Oct 24</span></h3>
+    <div class="day" data-d="sat"><h3><span>Saturday</span><span>Oct 24</span></h3>
       <div class="row"><span class="t">8:00 AM</span><span>Parking lots open</span></div>
       <div class="row"><span class="t">8:30 AM</span><span>Gates open</span></div>
       <div class="row"><span class="t">9:10&ndash;9:40</span><span>Porsche Carrera Cup qualifying</span></div>
@@ -149,7 +199,7 @@ footer p{margin:0 0 8px}
       <div class="row"><span class="t">6:00&ndash;6:35</span><span>F1 Academy reverse-grid race</span></div>
       <div class="row mu"><span class="t">~7:35&ndash;8:05*</span><span>POST MALONE &middot; Super Stage</span></div>
     </div>
-    <div class="day"><h3><span>Sunday</span><span>Oct 25</span></h3>
+    <div class="day" data-d="sun"><h3><span>Sunday</span><span>Oct 25</span></h3>
       <div class="row"><span class="t">8:00 AM</span><span>Parking lots open</span></div>
       <div class="row"><span class="t">8:30 AM</span><span>Gates open</span></div>
       <div class="row"><span class="t">9:25&ndash;9:55</span><span>Masters Historic race 2</span></div>
@@ -167,13 +217,13 @@ footer p{margin:0 0 8px}
   <div class="note"><b>* Concert times:</b> COTA says Super Stage concerts start <b>60 to 90 minutes after track activity ends</b>, and concert-area gates open about 90 minutes after. Counting from the end of the F1 Academy race (6:25 PM Fri, 6:35 PM Sat) gives the windows shown. COTA hasn&rsquo;t published exact start times; check the COTA app.</div>
 </section>
 
-<section>
+<section data-panel="music" id="p-music" role="tabpanel" aria-labelledby="tab-music">
   <div class="sec-h"><i></i><div><span class="kicker">Included with your race ticket</span><h2>The American Soundtrack</h2></div></div>
   <div class="rule"></div>
   <div class="grid g3">
-    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--yel);letter-spacing:.08em">FRIDAY OCT 23</h3><h3>MAROON 5</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--yel);font-weight:800">~7:25&ndash;7:55 PM &middot; after track action</p><p class="small">Sugar &middot; Moves Like Jagger &middot; Girls Like You</p></div>
-    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--yel);letter-spacing:.08em">SATURDAY OCT 24</h3><h3>POST MALONE</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--yel);font-weight:800">~7:35&ndash;8:05 PM &middot; after track action</p><p class="small">Circles &middot; Sunflower &middot; I Had Some Help</p></div>
-    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--yel);letter-spacing:.08em">SUNDAY OCT 25</h3><h3>ALESSO</h3><p><b>Germania Insurance Amphitheater</b></p><p style="color:var(--yel);font-weight:800">5:30 PM &middot; post-race</p><p class="small">Heroes (we could be) &middot; Calling</p></div>
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">FRIDAY OCT 23</h3><h3>MAROON 5</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--amber);font-weight:800">~7:25&ndash;7:55 PM &middot; after track action</p><p class="small">Sugar &middot; Moves Like Jagger &middot; Girls Like You</p></div>
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">SATURDAY OCT 24</h3><h3>POST MALONE</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--amber);font-weight:800">~7:35&ndash;8:05 PM &middot; after track action</p><p class="small">Circles &middot; Sunflower &middot; I Had Some Help</p></div>
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">SUNDAY OCT 25</h3><h3>ALESSO</h3><p><b>Germania Insurance Amphitheater</b></p><p style="color:var(--amber);font-weight:800">5:30 PM &middot; post-race</p><p class="small">Heroes (we could be) &middot; Calling</p></div>
   </div>
   <p class="kicker" style="margin:18px 0 8px">Smaller stages &middot; The Ranch &middot; La Cantina</p>
   <div class="grid g3">
@@ -215,7 +265,7 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
-<section>
+<section data-panel="track" id="p-track" role="tabpanel" aria-labelledby="tab-track">
   <div class="sec-h"><i></i><div><span class="kicker">Villages, views and extras</span><h2>Around the Track</h2></div></div>
   <div class="rule"></div>
   <div class="grid g2">
@@ -254,7 +304,7 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
-<section>
+<section data-panel="rules" id="p-rules" role="tabpanel" aria-labelledby="tab-rules">
   <div class="sec-h"><i></i><div><span class="kicker">Security checks every guest</span><h2>Gate Rules</h2></div></div>
   <div class="rule"></div>
   <div class="grid g2">
@@ -288,6 +338,23 @@ footer p{margin:0 0 8px}
       <li>Flags and banners in the grandstands</li>
       <li>Revealing or offensive clothing (staff decide)</li></ul></div>
   </div>
+  <div class="card y" style="margin-top:12px"><h3>My packing checklist</h3>
+    <ul class="check" id="checklist">
+      <li><label><input type="checkbox"><span>Tickets and parking / shuttle pass saved in the COTA app</span></label></li>
+      <li><label><input type="checkbox"><span>Card for cashless payments</span></label></li>
+      <li><label><input type="checkbox"><span>Bag 12 &times; 12 &times; 20 in. or smaller</span></label></li>
+      <li><label><input type="checkbox"><span>One empty plastic water bottle (32 oz or less)</span></label></li>
+      <li><label><input type="checkbox"><span>Fully charged power bank and short cable</span></label></li>
+      <li><label><input type="checkbox"><span>Sunscreen (non-aerosol), hat, sunglasses</span></label></li>
+      <li><label><input type="checkbox"><span>Ear protection (the cars are loud)</span></label></li>
+      <li><label><input type="checkbox"><span>Comfortable walking shoes (lots of walking)</span></label></li>
+      <li><label><input type="checkbox"><span>Small umbrella or light rain layer</span></label></li>
+      <li><label><input type="checkbox"><span>Collapsible chair or blanket (GA)</span></label></li>
+      <li><label><input type="checkbox"><span>Binoculars</span></label></li>
+    </ul>
+    <button class="btn" type="button" id="resetcheck">Clear checklist</button>
+    <p class="small" style="margin-top:8px">Ticks are saved on this device only. Ear protection, shoes and rain layer are general tips, not COTA rules.</p>
+  </div>
   <div class="grid g3" style="margin-top:12px">
     <div class="card y"><h3>The water bottle question</h3><p>COTA&rsquo;s written policy bans <b>glass</b>, not metal. But <b>thermoses are banned</b>, and an insulated steel bottle can look like one at the gate. One fan guide says metal bottles get confiscated. <b>Plastic is the safe call.</b> Refills are free at Turn 1, Turn 3, Main Grandstand, Grand Plaza.</p></div>
     <div class="card y"><h3>Smoking, re-entry, lockers</h3><p>Smoking/vaping only in authorized areas 15 ft from entrances; never in covered areas or grandstands. <b>Re-entry is allowed</b>: scan out first, expect screening again. <b>Lockers</b> at the Grand Plaza entry gates: first come, first served, small fee.</p></div>
@@ -295,11 +362,11 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
-<section>
+<section data-panel="travel" id="p-travel" role="tabpanel" aria-labelledby="tab-travel">
   <div class="sec-h"><i></i><div><span class="kicker">Every car needs a pass</span><h2>Parking &amp; Shuttles</h2></div></div>
   <div class="rule"></div>
   <p class="kicker" style="margin:0 0 8px">Official COTA parking &middot; starting price per pass (Ticketmaster)</p>
-  <table>
+  <div class="tablewrap"><table>
     <tr><th>Lot</th><th>Near</th><th>From</th></tr>
     <tr><td>Lot F</td><td>Turns 11&ndash;19</td><td>$52+</td></tr>
     <tr><td>Park N Ride</td><td>Drop-off near Turn 11</td><td>$52+</td></tr>
@@ -308,7 +375,7 @@ footer p{margin:0 0 8px}
     <tr><td>Lot L</td><td>Turns 9&ndash;11</td><td>$100.17+</td></tr>
     <tr><td>Lot C Garage</td><td>Turns 12&ndash;19</td><td>$113+</td></tr>
     <tr><td>Lot T</td><td>Turn 1</td><td>$134.50+</td></tr>
-  </table>
+  </table></div>
   <div class="grid g2" style="margin-top:14px">
     <div class="card"><h3>Parking rules and routes</h3><ul>
       <li>No pass, no entry to COTA Blvd. Pass goes in the vehicle before you arrive.</li>
@@ -339,7 +406,7 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
-<section>
+<section data-panel="exit" id="p-exit" role="tabpanel" aria-labelledby="tab-exit">
   <div class="sec-h"><i></i><div><span class="kicker">Plan your exit before your entry</span><h2>Getting Out &amp; Staying</h2></div></div>
   <div class="rule"></div>
   <div class="tiles">
@@ -368,7 +435,7 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
-<section>
+<section data-panel="info" id="p-info" role="tabpanel" aria-labelledby="tab-info">
   <div class="sec-h"><i></i><div><span class="kicker">The fine print</span><h2>Know Before You Go</h2></div></div>
   <div class="rule"></div>
   <div class="grid g2">
@@ -389,11 +456,52 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
-<footer>
+</main>
+<footer class="wrap">
   <p><b>Sources:</b> circuitoftheamericas.com (Venue Policies, F1 Schedule, American Soundtrack lineup, Getting to COTA, F1 Parking, F1 Shuttles, Know Before You Go); help.thecircuit.com (gate security, lockers, Thursday FAQs, GA areas, merchandise, podium, paddock, wristband, Super Stage start); cotaland.com; austin.gp (visitor rules, fan zones, weather guidance); racer.com; Reuters via The Star (attendance); grandprixpal.com, oversteer48.com, parkingaccess.com, pixidia.com, Tripadvisor (traffic, prices); AccuWeather. Traffic times, hotel prices and the old-review beer price are third-party or anecdotal.</p>
   <p>Unofficial fan guide compiled Oct 17, 2026. Times and policies are subject to change; confirm with COTA. Not affiliated with Formula 1, COTA or any team. The color theme is inspired by team liveries only.</p>
 </footer>
-</div>
 <div class="stripe"></div>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('[role=tab]')),panels=[].slice.call(document.querySelectorAll('[data-panel]'));
+function show(k,focus){
+  tabs.forEach(function(t){var on=t.dataset.tab===k;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on){if(focus)t.focus();t.scrollIntoView({inline:'center',block:'nearest'});}});
+  panels.forEach(function(p){p.classList.toggle('on',p.dataset.panel===k);});
+  var nav=document.querySelector('nav.tabs');var top=nav.getBoundingClientRect().top+window.scrollY;
+  if(window.scrollY>top)window.scrollTo(0,top);
+}
+tabs.forEach(function(t,i){
+  t.addEventListener('click',function(){show(t.dataset.tab,false)});
+  t.addEventListener('keydown',function(e){
+    var j=null;if(e.key==='ArrowRight')j=(i+1)%tabs.length;else if(e.key==='ArrowLeft')j=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')j=0;else if(e.key==='End')j=tabs.length-1;
+    if(j!==null){e.preventDefault();show(tabs[j].dataset.tab,true);}
+  });
+});
+// day filter
+var chips=[].slice.call(document.querySelectorAll('.chips button')),days=[].slice.call(document.querySelectorAll('#sched .day'));
+chips.forEach(function(c){c.addEventListener('click',function(){
+  chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+  days.forEach(function(d){d.style.display=(c.dataset.day==='all'||d.dataset.d===c.dataset.day)?'':'none'});
+})});
+// countdown to 3:00 PM CDT Sun Oct 25 2026 (20:00 UTC)
+var el=document.getElementById('count'),start=Date.UTC(2026,9,25,20,0,0);
+function tick(){
+  var ms=start-Date.now();
+  if(ms>0){var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60);
+    el.innerHTML='Lights out in <b>'+d+'d '+h+'h '+(m%60)+'m</b> &middot; Sun Oct 25, 3:00 PM CT';}
+  else if(ms>-2*3600000){el.innerHTML='<b>It\u2019s race time!</b>';}
+  else{el.innerHTML='Race weekend: Oct 22\u201325, 2026';}
+}
+tick();setInterval(tick,30000);
+// checklist (saved on this device if storage is available)
+var boxes=[].slice.call(document.querySelectorAll('#checklist input')),KEY='usgp2026-checklist';
+try{var saved=JSON.parse(localStorage.getItem(KEY)||'[]');boxes.forEach(function(b,i){b.checked=!!saved[i]});}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(boxes.map(function(b){return b.checked})))}catch(e){}}
+boxes.forEach(function(b){b.addEventListener('change',save)});
+document.getElementById('resetcheck').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});save();});
+})();
+</script>
 </body>
 </html>
