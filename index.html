@@ -143,6 +143,10 @@ td:last-child{color:var(--redd);font-weight:800;white-space:nowrap}
 .wxh span{display:block;color:var(--grey);font-weight:700}
 .wxh.now{border-color:var(--red);border-width:2px}
 .wxerr{border-left-color:var(--red)}
+.herotop{display:flex;align-items:center;gap:clamp(18px,4vw,44px);margin-top:6px}
+.herotop h1{margin-top:0;flex:0 1 auto}
+.heroimg{flex:0 0 auto;width:clamp(210px,24vw,250px);height:auto;aspect-ratio:1;border-radius:20px;border:4px solid #fff;transform:rotate(4deg);box-shadow:8px 8px 0 var(--red),15px 15px 0 var(--yel),0 10px 24px rgba(10,22,51,.3);margin:0 18px 14px 0}
+@media(max-width:700px){.herotop{gap:14px}.heroimg{width:92px;border-width:3px;border-radius:14px;box-shadow:4px 4px 0 var(--red),8px 8px 0 var(--yel);margin:0 8px 8px 0}}
 footer{margin-top:44px;padding:18px 0 28px;color:var(--grey);font-size:.8rem;border-top:2px solid var(--line)}
 footer p{margin:0 0 8px}
 @media print{nav.tabs,.chips,.count,.btn{display:none}.js [data-panel]{display:block!important}body{background:#fff}.card,.day,.can,.cant{break-inside:avoid;box-shadow:none}}
@@ -160,7 +164,7 @@ document.head.appendChild(l);}catch(e){}})();
 <div class="stripe"></div>
 <header class="hero"><div class="wrap">
   <div class="kicker">Formula 1 &middot; 2026 Season</div>
-  <h1>United <br>States <span>Grand Prix</span></h1>
+  <div class="herotop"><h1>United <br>States <span>Grand Prix</span></h1><img class="heroimg" id="heroimg" alt="" width="200" height="200"></div>
   <div class="sub">CIRCUIT OF THE AMERICAS &middot; AUSTIN, TEXAS</div>
   <div class="sub2">THE FAN&rsquo;S FIELD GUIDE TO RACE WEEKEND</div>
   <div class="band"></div>
@@ -245,6 +249,7 @@ document.head.appendChild(l);}catch(e){}})();
 <section data-panel="weather" id="p-weather" role="tabpanel" aria-labelledby="tab-weather">
   <div class="sec-h"><i></i><div><span class="kicker">Live from the circuit area</span><h2>Weather at COTA</h2></div></div>
   <div class="rule"></div>
+  <div class="chips" role="group" aria-label="Units" style="margin-bottom:12px"><button type="button" id="uF" data-u="F" aria-pressed="true">&deg;F &middot; mph</button><button type="button" id="uC" data-u="C" aria-pressed="false">&deg;C &middot; km/h</button></div>
   <div id="wx"><div class="note" style="margin-top:0">Loading live weather&hellip;</div></div>
   <p class="small" id="wxmeta" style="margin-top:12px"></p>
   <button class="btn" type="button" id="wxrefresh">Refresh now</button>
@@ -498,6 +503,7 @@ document.head.appendChild(l);}catch(e){}})();
 <div class="stripe"></div>
 <script>
 document.documentElement.classList.add('js');
+try{document.getElementById('heroimg').src=document.querySelector('link[rel=apple-touch-icon]').href}catch(e){}
 (function(){
 var tabs=[].slice.call(document.querySelectorAll('[role=tab]')),panels=[].slice.call(document.querySelectorAll('[data-panel]'));
 function show(k,focus){
@@ -553,21 +559,27 @@ function cond(c){
   if(c===66||c===67)return'Freezing rain';if(c>=71&&c<=77||c===85||c===86)return'Snow';
   if(c===95)return'Thunderstorm';if(c===96||c===99)return'Thunderstorm, hail';return'Conditions n/a';
 }
+var U='F';try{if(localStorage.getItem('usgp2026-unit')==='C')U='C'}catch(e){}
 function r(n){return n==null?'--':Math.round(n)}
+function tf(n){return n==null?'--':Math.round(U==='C'?(n-32)*5/9:n)}
+function tu(){return '&deg;'+U}
+function wd(n){return n==null?'--':(U==='C'?Math.round(n*1.609344)+' km/h':Math.round(n)+' mph')}
+function pr(n){n=n||0;return U==='C'?(Math.round(n*25.4*10)/10)+' mm':(Math.round(n*100)/100)+' in'}
 function esc(t){var d=document.createElement('div');d.textContent=String(t);return d.innerHTML}
 function hr12(iso){var h=+iso.slice(11,13);return (h%12||12)+(h<12?' AM':' PM')}
 function dlabel(iso){var d=new Date(iso+'T12:00:00Z');return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'UTC'})}
 function tm(iso){return hr12(iso).replace(':00','')+(iso.slice(14,16)!=='00'?'':'')}
 function sun(iso){var h=+iso.slice(11,13),m=iso.slice(14,16);return (h%12||12)+':'+m+(h<12?' AM':' PM')}
-function render(d,stale,ts){
+var LAST=null;
+function render(d,stale,ts){LAST=[d,stale,ts];
   var cur=d.current,dy=d.daily,hr=d.hourly,out='';
-  out+='<div class="card hi"><h3>Right now at the circuit</h3><div class="wxcur"><div><div class="temp">'+r(cur.temperature_2m)+'&deg;F</div><div class="cond">'+esc(cond(cur.weather_code))+'</div></div>'
-   +'<dl><dt>Feels like</dt><dd>'+r(cur.apparent_temperature)+'&deg;F</dd><dt>Wind</dt><dd>'+r(cur.wind_speed_10m)+' mph (gusts '+r(cur.wind_gusts_10m)+')</dd><dt>Humidity</dt><dd>'+r(cur.relative_humidity_2m)+'%</dd><dt>Rain now</dt><dd>'+(cur.precipitation||0)+' in</dd></dl></div></div>';
+  out+='<div class="card hi"><h3>Right now at the circuit</h3><div class="wxcur"><div><div class="temp">'+tf(cur.temperature_2m)+tu()+'</div><div class="cond">'+esc(cond(cur.weather_code))+'</div></div>'
+   +'<dl><dt>Feels like</dt><dd>'+tf(cur.apparent_temperature)+tu()+'</dd><dt>Wind</dt><dd>'+wd(cur.wind_speed_10m)+' (gusts '+wd(cur.wind_gusts_10m)+')</dd><dt>Humidity</dt><dd>'+r(cur.relative_humidity_2m)+'%</dd><dt>Rain now</dt><dd>'+pr(cur.precipitation)+'</dd></dl></div></div>';
   // hourly next 24
   var ci=0;for(var i=0;i<hr.time.length;i++){if(hr.time[i]>=cur.time.slice(0,13)+':00'){ci=i;break}}
   out+='<h3 class="kicker" style="margin:18px 0 8px">Next 24 hours</h3><div class="wxhours">';
   for(var k=ci;k<Math.min(ci+24,hr.time.length);k++){
-    out+='<div class="wxh'+(k===ci?' now':'')+'"><span>'+(k===ci?'Now':hr12(hr.time[k]))+'</span><b>'+r(hr.temperature_2m[k])+'&deg;</b><span>'+r(hr.precipitation_probability[k])+'% rain</span></div>';
+    out+='<div class="wxh'+(k===ci?' now':'')+'"><span>'+(k===ci?'Now':hr12(hr.time[k]))+'</span><b>'+tf(hr.temperature_2m[k])+'&deg;</b><span>'+r(hr.precipitation_probability[k])+'% rain</span></div>';
   }
   out+='</div>';
   // race weekend days
@@ -578,24 +590,24 @@ function render(d,stale,ts){
     if(i<0){out+='<div class="wxday'+(day==='2026-10-25'?' race':'')+'"><h4>'+esc(NAMES[day])+'</h4><p class="small">Forecast not available yet. Check back closer to the weekend.</p></div>';return}
     any=true;
     var extra='';
-    if(day==='2026-10-25'){var j=hr.time.indexOf(day+'T15:00');if(j>=0)extra='<p><b>Green flag, 3 PM:</b> '+r(hr.temperature_2m[j])+'&deg;F, '+r(hr.precipitation_probability[j])+'% rain chance</p>';}
-    out+='<div class="wxday'+(day==='2026-10-25'?' race':'')+'"><h4>'+esc(NAMES[day])+'</h4><div class="hl">'+r(dy.temperature_2m_max[i])+'&deg; <small>/ '+r(dy.temperature_2m_min[i])+'&deg;</small></div>'
-     +'<p><b>'+esc(cond(dy.weather_code[i]))+'</b></p><p>Rain chance: '+r(dy.precipitation_probability_max[i])+'% ('+(dy.precipitation_sum[i]||0)+' in)</p><p>Wind up to '+r(dy.wind_speed_10m_max[i])+' mph &middot; UV '+r(dy.uv_index_max[i])+'</p><p class="small">Sunrise '+sun(dy.sunrise[i])+' &middot; Sunset '+sun(dy.sunset[i])+'</p>'+extra+'</div>';
+    if(day==='2026-10-25'){var j=hr.time.indexOf(day+'T15:00');if(j>=0)extra='<p><b>Green flag, 3 PM:</b> '+tf(hr.temperature_2m[j])+tu()+', '+r(hr.precipitation_probability[j])+'% rain chance</p>';}
+    out+='<div class="wxday'+(day==='2026-10-25'?' race':'')+'"><h4>'+esc(NAMES[day])+'</h4><div class="hl">'+tf(dy.temperature_2m_max[i])+'&deg; <small>/ '+tf(dy.temperature_2m_min[i])+'&deg; '+U+'</small></div>'
+     +'<p><b>'+esc(cond(dy.weather_code[i]))+'</b></p><p>Rain chance: '+r(dy.precipitation_probability_max[i])+'% ('+pr(dy.precipitation_sum[i])+')</p><p>Wind up to '+wd(dy.wind_speed_10m_max[i])+' &middot; UV '+r(dy.uv_index_max[i])+'</p><p class="small">Sunrise '+sun(dy.sunrise[i])+' &middot; Sunset '+sun(dy.sunset[i])+'</p>'+extra+'</div>';
   });
   out+='</div>';
   // 10 day table
   out+='<h3 class="kicker" style="margin:18px 0 8px">Next 10 days</h3><div class="tablewrap"><table><tr><th>Day</th><th>Conditions</th><th>High / Low</th><th>Rain</th></tr>';
-  for(var n=0;n<dy.time.length;n++){out+='<tr><td>'+esc(dlabel(dy.time[n]))+'</td><td style="font-weight:600;color:var(--ink)">'+esc(cond(dy.weather_code[n]))+'</td><td style="color:var(--ink);font-weight:700">'+r(dy.temperature_2m_max[n])+'&deg; / '+r(dy.temperature_2m_min[n])+'&deg;</td><td>'+r(dy.precipitation_probability_max[n])+'%</td></tr>'}
+  for(var n=0;n<dy.time.length;n++){out+='<tr><td>'+esc(dlabel(dy.time[n]))+'</td><td style="font-weight:600;color:var(--ink)">'+esc(cond(dy.weather_code[n]))+'</td><td style="color:var(--ink);font-weight:700">'+tf(dy.temperature_2m_max[n])+'&deg; / '+tf(dy.temperature_2m_min[n])+'&deg; '+U+'</td><td>'+r(dy.precipitation_probability_max[n])+'%</td></tr>'}
   out+='</table></div>';
   document.getElementById('wx').innerHTML=out;
   var when=new Date(ts).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
   document.getElementById('wxmeta').textContent=(stale?'Offline or unavailable: showing saved data from ':'Updated ')+when+' (your device time). Refreshes automatically every 10 minutes.';
-  var pill=document.getElementById('wxnow');pill.hidden=false;pill.innerHTML='COTA now: <b>'+r(cur.temperature_2m)+'&deg;F</b> &middot; '+esc(cond(cur.weather_code));
+  var pill=document.getElementById('wxnow');pill.hidden=false;pill.title='Tap to switch \u00b0F / \u00b0C';pill.style.cursor='pointer';pill.onclick=function(){setU(U==='F'?'C':'F',true)};pill.innerHTML='COTA now: <b>'+tf(cur.temperature_2m)+tu()+'</b> &middot; '+esc(cond(cur.weather_code));
 }
 function fail(){
   var saved=null;try{saved=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
   if(saved&&saved.d){try{render(saved.d,true,saved.t);return}catch(e){}}
-  document.getElementById('wx').innerHTML='<div class="note wxerr" style="margin-top:0"><b>Live weather isn&rsquo;t available right now.</b> It needs an internet connection. Typical mid-October Austin: highs 70&ndash;80&deg;F, lows near 60&deg;F. Check <a href="https://www.weather.gov/ewx/" rel="noopener">weather.gov</a> for the current forecast.</div>';
+  document.getElementById('wx').innerHTML='<div class="note wxerr" style="margin-top:0"><b>Live weather isn&rsquo;t available right now.</b> It needs an internet connection. Typical mid-October Austin: highs 70&ndash;80&deg;F (21&ndash;27&deg;C), lows near 60&deg;F (16&deg;C). Check <a href="https://www.weather.gov/ewx/" rel="noopener">weather.gov</a> for the current forecast.</div>';
   document.getElementById('wxmeta').textContent='';
 }
 function load(){
@@ -607,6 +619,11 @@ function load(){
 load();setInterval(load,600000);
 document.addEventListener('visibilitychange',function(){if(!document.hidden)load()});
 document.getElementById('wxrefresh').addEventListener('click',load);
+function setU(u,save){U=u;if(save){try{localStorage.setItem('usgp2026-unit',u)}catch(e){}}
+  [].forEach.call(document.querySelectorAll('[data-u]'),function(b){b.setAttribute('aria-pressed',b.dataset.u===u)});
+  if(LAST)render(LAST[0],LAST[1],LAST[2]);}
+[].forEach.call(document.querySelectorAll('[data-u]'),function(b){b.addEventListener('click',function(){setU(b.dataset.u,true)})});
+setU(U,false);
 })();
 </script>
 </body>
