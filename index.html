@@ -77,6 +77,8 @@ section{padding-top:26px}
 .row .t{color:var(--grey);font-weight:700;white-space:nowrap}
 .row.f1{background:#fde7ed;border-left:4px solid var(--red);padding-left:8px;color:var(--navy);font-weight:800}
 .row.f1 .t{color:var(--redd)}
+.row.fz{background:#e8eefc;border-left:4px solid #2a4fb5;padding-left:8px;color:var(--navy);font-weight:700}
+.row.fz .t{color:#2a4fb5}
 .row.mu{background:#fff5cc;border-left:4px solid var(--yel);padding-left:8px;color:var(--navy);font-weight:800}
 .row.mu .t{color:var(--amber)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
@@ -178,7 +180,7 @@ document.head.appendChild(l);}catch(e){}})();
   <div class="dates">OCT 22&ndash;25 <span>2026</span></div>
   <div class="count" id="wxnow" hidden></div> <div class="count" id="count" aria-live="off">Race start: <b>Sun Oct 25, 3:00 PM CT</b></div>
 </div></header>
-<nav class="tabs" aria-label="Guide sections"><div class="wrap" role="tablist"><button role="tab" id="tab-schedule" aria-controls="p-schedule" aria-selected="true" tabindex="0" data-tab="schedule">Schedule</button><button role="tab" id="tab-track" aria-controls="p-track" aria-selected="false" tabindex="-1" data-tab="track">Track</button><button role="tab" id="tab-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1" data-tab="dash">F1 Dash</button><button role="tab" id="tab-weather" aria-controls="p-weather" aria-selected="false" tabindex="-1" data-tab="weather">Weather</button><button role="tab" id="tab-rules" aria-controls="p-rules" aria-selected="false" tabindex="-1" data-tab="rules">Gate Rules</button><button role="tab" id="tab-travel" aria-controls="p-travel" aria-selected="false" tabindex="-1" data-tab="travel">Parking</button><button role="tab" id="tab-exit" aria-controls="p-exit" aria-selected="false" tabindex="-1" data-tab="exit">Exit &amp; Stay</button><button role="tab" id="tab-music" aria-controls="p-music" aria-selected="false" tabindex="-1" data-tab="music">Music</button><button role="tab" id="tab-info" aria-controls="p-info" aria-selected="false" tabindex="-1" data-tab="info">Fine Print</button></div></nav>
+<nav class="tabs" aria-label="Guide sections"><div class="wrap" role="tablist"><button role="tab" id="tab-schedule" aria-controls="p-schedule" aria-selected="true" tabindex="0" data-tab="schedule">Schedule</button><button role="tab" id="tab-track" aria-controls="p-track" aria-selected="false" tabindex="-1" data-tab="track">Track</button><button role="tab" id="tab-map" aria-controls="p-map" aria-selected="false" tabindex="-1" data-tab="map">Map</button><button role="tab" id="tab-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1" data-tab="dash">F1 Dash</button><button role="tab" id="tab-weather" aria-controls="p-weather" aria-selected="false" tabindex="-1" data-tab="weather">Weather</button><button role="tab" id="tab-rules" aria-controls="p-rules" aria-selected="false" tabindex="-1" data-tab="rules">Gate Rules</button><button role="tab" id="tab-travel" aria-controls="p-travel" aria-selected="false" tabindex="-1" data-tab="travel">Parking</button><button role="tab" id="tab-exit" aria-controls="p-exit" aria-selected="false" tabindex="-1" data-tab="exit">Exit &amp; Stay</button><button role="tab" id="tab-music" aria-controls="p-music" aria-selected="false" tabindex="-1" data-tab="music">Music</button><button role="tab" id="tab-info" aria-controls="p-info" aria-selected="false" tabindex="-1" data-tab="info">Fine Print</button></div></nav>
 <main class="wrap">
 
 <section data-panel="schedule" id="p-schedule" role="tabpanel" aria-labelledby="tab-schedule" class="on">
@@ -214,13 +216,13 @@ document.head.appendChild(l);}catch(e){}})();
       <div class="row"><span class="t">8:30 AM</span><span>Parking lots open</span></div>
       <div class="row"><span class="t">9:00 AM</span><span>Gates open</span></div>
       <div class="row"><span class="t">9:45&ndash;10:10</span><span>Masters Historic practice</span></div>
-      <div class="row"><span class="t">10:20&ndash;10:55</span><span>Pirelli hot laps</span></div>
-      <div class="row f1"><span class="t">12:30&ndash;1:30</span><span>F1 PRACTICE 1</span></div>
+      <div class="row fz"><span class="t">10:10&ndash;10:20</span><span>VCARB interview &middot; Fan Zone</span></div><div class="row fz"><span class="t">10:20&ndash;10:30</span><span>Audi interview &middot; Fan Zone</span></div><div class="row"><span class="t">10:20&ndash;10:55</span><span>Pirelli hot laps</span></div>
+      <div class="row fz"><span class="t">10:30&ndash;10:40</span><span>McLaren interview &middot; Fan Zone</span></div><div class="row fz"><span class="t">10:40&ndash;10:50</span><span>Williams interview &middot; Fan Zone</span></div><div class="row fz"><span class="t">10:50&ndash;11:00</span><span>Cadillac interview &middot; Fan Zone</span></div><div class="row fz"><span class="t">11:00&ndash;11:10</span><span>Aston interview &middot; Fan Zone</span></div><div class="row"><span class="t">11:50&ndash;12:00</span><span>MotoGP takes the track: practice laps</span></div><div class="row f1"><span class="t">12:30&ndash;1:30</span><span>F1 PRACTICE 1</span></div>
       <div class="row"><span class="t">2:00&ndash;2:30</span><span>Porsche Carrera Cup practice</span></div>
-      <div class="row"><span class="t">2:55&ndash;3:20</span><span>Masters Historic qualifying</span></div>
+      <div class="row fz"><span class="t">2:30&ndash;2:40</span><span>Zak (McLaren) interview &middot; Fan Zone</span></div><div class="row"><span class="t">2:55&ndash;3:20</span><span>Masters Historic qualifying</span></div><div class="row fz"><span class="t">3:00&ndash;3:10</span><span>Ayao (Haas) interview &middot; Fan Zone</span></div><div class="row fz"><span class="t">3:10&ndash;3:20</span><span>Marcin (Cadillac) interview &middot; Fan Zone</span></div>
       <div class="row f1"><span class="t">4:00&ndash;5:00</span><span>F1 PRACTICE 2</span></div>
       <div class="row"><span class="t">5:50&ndash;6:25</span><span>F1 Academy opening race</span></div>
-      <div class="row mu"><span class="t">~7:25&ndash;7:55*</span><span>MAROON 5 &middot; Super Stage</span></div>
+      <div class="row mu"><span class="t">~7:55 PM*</span><span>MAROON 5 &middot; Super Stage</span></div>
     </div>
     <div class="day" data-d="sat"><h3><span>Saturday</span><span>Oct 24</span></h3>
       <div class="row"><span class="t">8:00 AM</span><span>Parking lots open</span></div>
@@ -228,12 +230,12 @@ document.head.appendChild(l);}catch(e){}})();
       <div class="row"><span class="t">9:10&ndash;9:40</span><span>Porsche Carrera Cup qualifying</span></div>
       <div class="row"><span class="t">10:10&ndash;10:40</span><span>Masters Historic race 1</span></div>
       <div class="row"><span class="t">11:00&ndash;11:30</span><span>Porsche driver autographs</span></div>
-      <div class="row f1"><span class="t">12:30&ndash;1:30</span><span>F1 PRACTICE 3</span></div>
+      <div class="row"><span class="t">11:40&ndash;12:00</span><span>MotoGP takes the track</span></div><div class="row f1"><span class="t">12:30&ndash;1:30</span><span>F1 PRACTICE 3</span></div>
       <div class="row"><span class="t">1:45&ndash;2:10</span><span>Pirelli hot laps</span></div>
       <div class="row"><span class="t">2:35&ndash;3:15</span><span>Porsche Carrera Cup race 1</span></div>
       <div class="row f1"><span class="t">4:00&ndash;5:00</span><span>F1 QUALIFYING</span></div>
       <div class="row"><span class="t">6:00&ndash;6:35</span><span>F1 Academy reverse-grid race</span></div>
-      <div class="row mu"><span class="t">~7:35&ndash;8:05*</span><span>POST MALONE &middot; Super Stage</span></div>
+      <div class="row mu"><span class="t">~8:05 PM*</span><span>POST MALONE &middot; Super Stage</span></div>
     </div>
     <div class="day" data-d="sun"><h3><span>Sunday</span><span>Oct 25</span></h3>
       <div class="row"><span class="t">8:00 AM</span><span>Parking lots open</span></div>
@@ -249,8 +251,8 @@ document.head.appendChild(l);}catch(e){}})();
       <div class="row mu"><span class="t">5:30 PM</span><span>ALESSO &middot; Amphitheater</span></div>
     </div>
   </div>
-  <div class="note"><b>How to read this:</b> pink rows are Formula 1 sessions and headline moments; gold rows are headline concerts. This is a standard weekend with <b>no sprint race</b>. Thursday (&ldquo;Grand PrixView&rdquo;) is new: $20 standalone, or included with a 3-day ticket. Only Thursday ticket holders can do the Pit Lane Walk, and all Thursday guests enter through the Grand Plaza gates.</div>
-  <div class="note"><b>* Concert times:</b> COTA says Super Stage concerts start <b>60 to 90 minutes after track activity ends</b>, and concert-area gates open about 90 minutes after. Counting from the end of the F1 Academy race (6:25 PM Fri, 6:35 PM Sat) gives the windows shown. COTA hasn&rsquo;t published exact start times; check the COTA app.</div>
+  <div class="note"><b>How to read this:</b> pink rows are Formula 1 sessions and headline moments; gold rows are headline concerts; blue rows are team interviews in the Fan Zone (Friday). This is a standard weekend with <b>no sprint race</b>. Thursday (&ldquo;Grand PrixView&rdquo;) is new: $20 standalone, or included with a 3-day ticket. Only Thursday ticket holders can do the Pit Lane Walk, and all Thursday guests enter through the Grand Plaza gates.</div>
+  <div class="note"><b>* Concert times:</b> COTA&rsquo;s updated schedule lists Maroon 5 and Post Malone as <b>&ldquo;Approx. 90 Minutes Post-Track Activity.&rdquo;</b> Counting 90 minutes from the end of the F1 Academy race (6:25 PM Fri, 6:35 PM Sat) gives about <b>7:55 PM Friday</b> and <b>8:05 PM Saturday</b>. COTA hasn&rsquo;t published exact start times or set lengths, and all times are subject to change; check the COTA app.</div>
 </section>
 
 <section data-panel="weather" id="p-weather" role="tabpanel" aria-labelledby="tab-weather">
@@ -271,12 +273,20 @@ document.head.appendChild(l);}catch(e){}})();
   <p class="small" style="margin-top:10px">F1 Dash is a separate website, not part of this guide. If the box above stays blank or asks you to sign in, that site doesn&rsquo;t allow being shown inside other pages, so use the button to open it in a new tab. Live data only shows during a session.</p>
 </section>
 
+<section data-panel="map" id="p-map" role="tabpanel" aria-labelledby="tab-map">
+  <div class="sec-h"><i></i><div><span class="kicker">Official COTA interactive map</span><h2>Circuit Map</h2></div></div>
+  <div class="rule"></div>
+  <p style="margin:0 0 10px"><a class="btn" style="display:inline-block;text-decoration:none;line-height:24px" href="https://connect.us.app.pam.co/?navmapId=1163fb45-8879-4e4f-807b-2eb2e1b3f98f&amp;utm_source=COTA.web&amp;utm_medium=website&amp;utm_campaign=COTA#17.5/30.136464/-97.638714/0/50" target="_blank" rel="noopener">Open the map in a new tab</a></p>
+  <div class="dashbox"><iframe id="mapframe" title="COTA F1 Smart Map" data-src="https://connect.us.app.pam.co/?navmapId=1163fb45-8879-4e4f-807b-2eb2e1b3f98f&amp;utm_source=COTA.web&amp;utm_medium=website&amp;utm_campaign=COTA#17.5/30.136464/-97.638714/0/50" allow="geolocation; fullscreen" loading="lazy"></iframe></div>
+  <p class="small" style="margin-top:10px">This is COTA&rsquo;s official F1 Smart Map, with search, a directory and experiences. It&rsquo;s a separate site, not part of this guide. If the box stays blank, use the button to open it in a new tab. Pinch or drag to zoom and move around.</p>
+</section>
+
 <section data-panel="music" id="p-music" role="tabpanel" aria-labelledby="tab-music">
   <div class="sec-h"><i></i><div><span class="kicker">Included with your race ticket</span><h2>The American Soundtrack</h2></div></div>
   <div class="rule"></div>
   <div class="grid g3">
-    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">FRIDAY OCT 23</h3><h3>MAROON 5</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--amber);font-weight:800">~7:25&ndash;7:55 PM &middot; after track action</p><p class="small">Sugar &middot; Moves Like Jagger &middot; Girls Like You</p></div>
-    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">SATURDAY OCT 24</h3><h3>POST MALONE</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--amber);font-weight:800">~7:35&ndash;8:05 PM &middot; after track action</p><p class="small">Circles &middot; Sunflower &middot; I Had Some Help</p></div>
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">FRIDAY OCT 23</h3><h3>MAROON 5</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--amber);font-weight:800">~7:55 PM &middot; approx. 90 min after track action</p><p class="small">Sugar &middot; Moves Like Jagger &middot; Girls Like You</p></div>
+    <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">SATURDAY OCT 24</h3><h3>POST MALONE</h3><p><b>Germania Insurance Super Stage</b></p><p style="color:var(--amber);font-weight:800">~8:05 PM &middot; approx. 90 min after track action</p><p class="small">Circles &middot; Sunflower &middot; I Had Some Help</p></div>
     <div class="card hi big"><h3 style="font-size:.8rem;color:var(--amber);letter-spacing:.08em">SUNDAY OCT 25</h3><h3>ALESSO</h3><p><b>Germania Insurance Amphitheater</b></p><p style="color:var(--amber);font-weight:800">5:30 PM &middot; post-race</p><p class="small">Heroes (we could be) &middot; Calling</p></div>
   </div>
   <p class="kicker" style="margin:18px 0 8px">Smaller stages &middot; The Ranch &middot; La Cantina</p>
@@ -521,7 +531,7 @@ var tabs=[].slice.call(document.querySelectorAll('[role=tab]')),panels=[].slice.
 function show(k,focus){
   tabs.forEach(function(t){var on=t.dataset.tab===k;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on){if(focus)t.focus();t.scrollIntoView({inline:'center',block:'nearest'});}});
   panels.forEach(function(p){p.classList.toggle('on',p.dataset.panel===k);});
-  if(k==='dash'){var f=document.getElementById('dashframe');if(f&&!f.getAttribute('src'))f.setAttribute('src',f.dataset.src);}
+  var fid={dash:'dashframe',map:'mapframe'}[k];if(fid){var f=document.getElementById(fid);if(f&&!f.getAttribute('src'))f.setAttribute('src',f.dataset.src);}
   var nav=document.querySelector('nav.tabs');var top=nav.getBoundingClientRect().top+window.scrollY;
   if(window.scrollY>top)window.scrollTo(0,top);
 }
